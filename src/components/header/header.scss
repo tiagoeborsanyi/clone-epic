@@ -1,0 +1,7 @@
+@import '../../index.scss';
+
+.header {
+  grid-column: 1 / -1;
+
+  background-color: $color-secondary;
+}

@@ -1,4 +1,22 @@
-a {
-  text-decoration: none;
-  color: black;
+@import 'index.scss';
+
+.container {
+  display: grid;
+  grid-template-rows: 6rem repeat(2, min-content);
+  grid-template-columns: 10vw 1fr 10vw;
+
+  background-color: $color-primary;
+}
+
+.content {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+
+  display: grid;
+  grid-template-rows: minmax(calc(100vh - 6rem), 1fr);
+}
+
+.footer {
+  grid-row: 3 / -1;
+  grid-column: 2 / 3;
 }
