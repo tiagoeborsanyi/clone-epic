@@ -4,4 +4,99 @@
   grid-column: 1 / -1;
 
   background-color: $color-secondary;
+
+  display: grid;
+  grid-template-columns: 6rem repeat(2, 1fr);
+
+  &__logo {
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-column-gap: 2rem;
+    align-items: center;
+  }
+}
+
+.nav-link {
+  height: 100%;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding: 0 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all .4s;
+
+  &::before {
+    content: '';
+    height: 0;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: all .4s ease-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+
+    &::before {
+      height: .35rem;
+      background-color: $buttom-background-hover;
+    }
+  }
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, max-content));
+  grid-column-gap: 2rem;
+  align-items: center;
+  justify-content: end;
+
+   & > svg {
+     font-size: 1.9rem;
+     color: #ccc;
+   }
+
+   &__link {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+
+    & > svg {
+      margin-right: 1rem;
+      color: #ccc;
+    }
+   }
+
+   &__buttom {
+    height: 100%;
+    border: none;
+    background-color: $buttom-background;
+    padding: 0 1rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: all .5s;
+
+    &:hover {
+      background-color: $buttom-background-hover;
+      cursor: pointer;
+    }
+   }
+
+   &__link:hover,
+   & svg:hover {
+    cursor: pointer;
+    color: #fff;
+   }
 }
