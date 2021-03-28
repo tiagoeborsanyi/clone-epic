@@ -43,7 +43,8 @@
     transition: all .4s ease-out;
   }
 
-  &:hover {
+  &:hover,
+  &.selected-link {
     cursor: pointer;
     color: #fff;
 
