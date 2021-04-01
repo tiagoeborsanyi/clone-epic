@@ -3,13 +3,13 @@ export const carouselData = [
 		id: '1',
 		card: 'card1',
 		text: 'Promoção de primavera 21',
-		image: 'url(https://lh3.googleusercontent.com/proxy/1c3_0wmkLLpKDSDfNVoJmVWfq6Sk3m92JWvV1JWp8XIgoeMFbh8LzPC6C_68I41DojqIvKp0MqMR3iPZdQm-oJFCF0b-mgN2iBl8FPwAiL4DsTHAczLRDeeiRk2_8dx_pM55A3jGnl2u9P7JOBqiWK22Kwlrw3Tm_XeeG2VbRfhA)'
+		image: 'url(https://dropsdejogos.uai.com.br/wp-content/uploads/sites/10/2020/08/hitman-2-950x534.jpg)'
 	},
 	{
 		id: '2',
 		card: 'card2',
 		text: 'Magic: Legends',
-		image: 'url(https://lh3.googleusercontent.com/proxy/tP5BRCEPMu0T3cmse6BALw_dDwSwls60Qn4sqHA_W9z_ekQvDwaQIzhjk0degXE0GQrsDEPqY7cSvlEm3CqUEFDSz4z7vFLJ6aj6ud1byJYkX7qyg54m2vja)'
+		image: 'url(https://d1w82usnq70pt2.cloudfront.net/wp-content/uploads/2021/03/magiclegendstheme.jpg)'
 	},
 	{
 		id: '3',

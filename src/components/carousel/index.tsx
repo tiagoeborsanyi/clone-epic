@@ -5,7 +5,7 @@ import { carouselData as data } from './carousel.js'
 import CarouselItem from './carousel-item'
 
 const Carousel = () => {
-  const [cImage, setCImage] = useState('url(https://lh3.googleusercontent.com/proxy/1c3_0wmkLLpKDSDfNVoJmVWfq6Sk3m92JWvV1JWp8XIgoeMFbh8LzPC6C_68I41DojqIvKp0MqMR3iPZdQm-oJFCF0b-mgN2iBl8FPwAiL4DsTHAczLRDeeiRk2_8dx_pM55A3jGnl2u9P7JOBqiWK22Kwlrw3Tm_XeeG2VbRfhA)')
+  const [cImage, setCImage] = useState('url(https://dropsdejogos.uai.com.br/wp-content/uploads/sites/10/2020/08/hitman-2-950x534.jpg)')
   function clickedItem(id: string): void {
     for (let img of data) {
       if (img.id === id) {
