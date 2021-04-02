@@ -8,7 +8,16 @@ const Homepage = () => {
   return (
     <div>
       <Carousel />
-      <Card />
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between'
+      }}>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </div>
   )
 }
