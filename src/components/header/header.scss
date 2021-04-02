@@ -1,12 +1,18 @@
 @import '../../index.scss';
 
 .header {
+  height: 6rem;
   grid-column: 1 / -1;
+  grid-row: 1 / 2;
 
   background-color: $color-secondary;
 
   display: grid;
   grid-template-columns: 6rem repeat(2, 1fr);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
 
   &__logo {
     width: 60%;
