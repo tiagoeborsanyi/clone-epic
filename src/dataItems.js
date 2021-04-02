@@ -1,7 +1,7 @@
 export const dataItems = [
   {
     id: '0',
-    urlImage: '',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/card-hitman.jpg?alt=media',
     title: 'hitman 3',
     subtitle: 'IO Interactive',
     discount: '25',
@@ -15,7 +15,7 @@ export const dataItems = [
   },
   {
     id: '1',
-    urlImage: '',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/gta-premium-edition.png?alt=media',
     title: 'Grand Theft Auto V: Premium Exclusive',
     subtitle: 'Rockstar games',
     discount: '50',
@@ -29,7 +29,7 @@ export const dataItems = [
   },
   {
     id: '2',
-    urlImage: '',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/assassins-creed-valhala.webp?alt=media',
     title: 'Assassin\'s Creed: Valhala',
     subtitle: 'Ubisoft Montreal | Ubsoft',
     discount: '25',
@@ -43,7 +43,7 @@ export const dataItems = [
   },
   {
     id: '3',
-    urlImage: '',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/snow-runner.webp?alt=media',
     title: 'SnowRunner',
     subtitle: 'Saber Interactive | Focus Homer',
     discount: '40',
@@ -57,7 +57,7 @@ export const dataItems = [
   },
   {
     id: '4',
-    urlImage: './assets/card-hitman.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/werewolf.jpg?alt=media',
     title: 'Werewolf: The apocalypse - Ealoy',
     subtitle: 'Cyanide Studio | Nacon',
     discount: '30',

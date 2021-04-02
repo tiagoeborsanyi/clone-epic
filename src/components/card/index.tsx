@@ -9,7 +9,7 @@ interface ICardProps {
 
 const Card: React.FC<ICardProps> = ({ urlImg }) => (
   <div className='card'>
-    <div className='card__img' style={{backgroundImage: `url('../../assets/card-hitman.jpg')`}}></div>
+    <div className='card__img' style={{backgroundImage: `url(${urlImg})`}}></div>
     <h3 className='card__title'>Hitman 3</h3>
     <h4 className='card__subtitle'>IO Interactive</h4>
     <span className='card__percent'>-25%</span>
