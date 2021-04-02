@@ -1,7 +1,6 @@
 import React from 'react'
 
 import './card.scss'
-// import Hitman from '../../assets/card-hitman.jpg'
 
 interface ICardProps {
   urlImg: string
