@@ -1,3 +1,36 @@
+@import '../../index.scss';
+
 .header-show-cards {
   grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > h3 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  & > a {
+    font-size: .9rem;
+    border: 1px solid $buttom-color;
+    padding: .3rem .9rem;
+    color: $buttom-color;
+    border-radius: 3px;
+    font-weight: 400;
+    transition: all .3s;
+
+    &:hover {
+      color: $buttom-color-hover;
+    }
+  }
+}
+
+.header-show-cards__Show {
+  display: block;
+}
+
+.header-show-cards__invisible {
+  display: none;
 }

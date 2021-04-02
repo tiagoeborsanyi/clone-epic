@@ -7,17 +7,17 @@ import {dataItems} from '../../dataItems'
 
 const ShowCards = () => (
   <div className='show-cards'>
-    <HeaderShowCards />
-    {
-      dataItems.map(card => (
-        <>
-          <Card 
-            key={card.id}
-            urlImg={card.urlImage} 
-          />
-        </>
-      ))
-    }
+    <HeaderShowCards title='Promoção de primavera' show />
+    <div className='show-cards__items'>
+      {
+        dataItems.map(card => (
+            <Card 
+              key={card.id}
+              urlImg={card.urlImage} 
+            />
+        ))
+      }
+    </div>
   </div>
 )
 
