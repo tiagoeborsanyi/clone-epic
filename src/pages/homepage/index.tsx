@@ -4,6 +4,8 @@ import './homepage.scss'
 import Carousel from '../../components/carousel'
 import Card from '../../components/card'
 
+import {dataItems} from '../../dataItems'
+
 const Homepage = () => {
   return (
     <div>
@@ -12,11 +14,14 @@ const Homepage = () => {
         display: 'flex',
         justifyContent: 'space-between'
       }}>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          dataItems.map(card => (
+            <>
+              <Card urlImg={card.urlImage} />
+            </>
+          ))
+        }
+        
       </div>
     </div>
   )
