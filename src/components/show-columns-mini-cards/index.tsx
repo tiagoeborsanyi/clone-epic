@@ -8,7 +8,7 @@ import ColumnMiniCard from '../column-mini-card'
 import MiniCard from '../mini-card'
 
 const ShowColumnsMiniCards = () => {
-  function arrayMiniCards (type: string): Array<Object> {
+  function arrayMiniCards (type: string): Array<any> {
     return dataItems.filter(item => item.tags.find(el => el === type))
   }
 
@@ -35,19 +35,29 @@ const ShowColumnsMiniCards = () => {
       cards: arrayMiniCards('coming')
     },
   ]
-
+  
   return (
     <div className='show-columns-mini-cards'>
       <HeaderShowCards title='Novos e populares' />
       <div className='columns-mini-card'>
         {
           arrColumn.map(column => (
-            <ColumnMiniCard title={column.title} show={column.show}>
-              <MiniCard 
-                percent=''
-                oldValue=''
-                newValue='279,90'
-              />
+            <ColumnMiniCard 
+              key={column.id}
+              title={column.title} 
+              show={column.show}
+            >
+              {
+                column.cards.map(item => (
+                  <MiniCard 
+                    key={item.id + Math.random()}
+                    percent={item.discount}
+                    oldValue={item.oldValue}
+                    newValue={item.newValue}
+                    urlImg={item.urlImage}
+                  />
+                ))
+              }
             </ColumnMiniCard>
           ))
         }
