@@ -3,7 +3,13 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 const config = {
-
+  apiKey: "AIzaSyA7I_biHNk-31-4s86u_2f5bgRAiig16vo",
+  authDomain: "clone-epic.firebaseapp.com",
+  projectId: "clone-epic",
+  storageBucket: "clone-epic.appspot.com",
+  messagingSenderId: "35876699883",
+  appId: "1:35876699883:web:2fdb21da32565ca1ab88ae",
+  measurementId: "G-ZF74DM3SQK"
 }
 
 export const createUserProfileDocument = async (userAuth: any, additionalData: any): Promise<any> => {
