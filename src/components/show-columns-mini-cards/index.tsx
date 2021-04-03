@@ -43,7 +43,11 @@ const ShowColumnsMiniCards = () => {
         {
           arrColumn.map(column => (
             <ColumnMiniCard title={column.title} show={column.show}>
-              <MiniCard />
+              <MiniCard 
+                percent=''
+                oldValue=''
+                newValue='279,90'
+              />
             </ColumnMiniCard>
           ))
         }

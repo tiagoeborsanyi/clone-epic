@@ -71,7 +71,7 @@ export const dataItems = [
   },
   {
     id: '5',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/outriders.webp',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/outriders.webp?alt=media',
     title: 'OUTIRIDERS',
     subtitle: '',
     discount: '',
@@ -85,7 +85,7 @@ export const dataItems = [
   },
   {
     id: '6',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/kindon-hearts-2-8.jpeg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/kindon-hearts-2-8.jpeg?alt=media',
     title: 'KINDON HEARTS HD',
     subtitle: '',
     discount: '20',
@@ -99,7 +99,7 @@ export const dataItems = [
   },
   {
     id: '7',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/kindon-hearts-2-8.jpeg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/kindon-hearts-2-8.jpeg?alt=media',
     title: 'KINDON HEARTS HD 2.8',
     subtitle: '',
     discount: '20',
@@ -113,7 +113,7 @@ export const dataItems = [
   },
   {
     id: '8',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/kindon-hearts.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/kindon-hearts.jpg?alt=media',
     title: 'KINDON HEARTS III + Re Mind',
     subtitle: '',
     discount: '20',
@@ -127,7 +127,7 @@ export const dataItems = [
   },
   {
     id: '9',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/kindon-heards-melody-of-memory.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/kindon-heards-melody-of-memory.jpg?alt=media',
     title: 'KINDON HEARTS Melody of Memory',
     subtitle: '',
     discount: '20',
@@ -141,7 +141,7 @@ export const dataItems = [
   },
   {
     id: '10',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/rocket-league.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/rocket-league.jpg?alt=media',
     title: 'Rocket League',
     subtitle: '',
     discount: '',
@@ -155,7 +155,7 @@ export const dataItems = [
   },
   {
     id: '11',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/hood-outllaws-legends.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/hood-outllaws-legends.jpg?alt=media',
     title: 'Hood: Outlaws & Legends',
     subtitle: '',
     discount: '',
@@ -169,7 +169,7 @@ export const dataItems = [
   },
   {
     id: '12',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/ruined-king.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/ruined-king.jpg?alt=media',
     title: 'Ruined King: A League of Legends story',
     subtitle: '',
     discount: '',
@@ -183,7 +183,7 @@ export const dataItems = [
   },
   {
     id: '12',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/oddwold-soulsstorm.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/oddwold-soulsstorm.jpg?alt=media',
     title: 'Oddworld Soulstorm',
     subtitle: '',
     discount: '',
@@ -197,7 +197,7 @@ export const dataItems = [
   },
   {
     id: '13',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/chivalry-2.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/chivalry-2.jpg?alt=media',
     title: 'Chivarly 2',
     subtitle: '',
     discount: '',
@@ -211,7 +211,7 @@ export const dataItems = [
   },
   {
     id: '14',
-    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/biomutant.jpg',
+    urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/biomutant.jpg?alt=media',
     title: 'BIOMUTANT',
     subtitle: '',
     discount: '',
