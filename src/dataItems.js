@@ -108,7 +108,7 @@ export const dataItems = [
     description: '',
     publishing: '',
     plataform: '',
-    tags: ['+sold', 'releases'],
+    tags: ['+sold'],
     favorited: false
   },
   {
