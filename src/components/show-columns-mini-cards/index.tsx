@@ -51,6 +51,7 @@ const ShowColumnsMiniCards = () => {
                 column.cards.map(item => (
                   <MiniCard 
                     key={item.id + Math.random()}
+                    title={item.title}
                     percent={item.discount}
                     oldValue={item.oldValue}
                     newValue={item.newValue}
