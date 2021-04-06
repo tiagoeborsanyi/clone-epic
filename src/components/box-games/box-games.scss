@@ -1,0 +1,58 @@
+@import '../../index.scss';
+
+.box-games {
+  height: auto;
+  width: 100%;
+  background-color: $color-secondary;
+  border-radius: 3px;
+  padding: 2.4rem 1.9rem;
+
+  &__cards {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+  }
+
+  &__card {
+    height: auto;
+    width: 49%;
+    background-color: transparent;
+  }
+
+  &__image {
+    height: 35em;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 20px;
+
+    & > span {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      background-color: $buttom-background;
+      line-height: 0;
+      padding: .8em 0;
+      font-weight: 400;
+      font-size: 1.5em;
+      border-radius: 0 0 4px 4px;
+    }
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #fff;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: $buttom-color;
+  }
+}
