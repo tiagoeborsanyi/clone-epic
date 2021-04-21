@@ -13,7 +13,8 @@ const ShowCards = () => (
         dataItems.filter((_, index) => index < 5).map(card => (
             <Card 
               key={card.id}
-              urlImg={card.urlImage} 
+              urlImg={card.urlImage}
+              otherProps={card}
             />
         ))
       }
