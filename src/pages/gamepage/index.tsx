@@ -4,16 +4,17 @@ import { dataItems } from '../../dataItems'
 
 interface IGamePageProps {
   match: any
+  history: any
 }
 
-const GamePage: React.FC<IGamePageProps> = ({match}) => {
-  console.log(match.params.id)
+const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
 
   useEffect(() => {
-    // Se passar um id que nao existe (seja undefined) entao tenho que colocar uma modal de 404 ou page de 404
     const filterData = dataItems.filter(item => item.id === match.params.id)
-    console.log(filterData[0])
-  }, [match.params.id])
+    if (!filterData[0]) {
+      history.push('/')
+    }
+  }, [match.params.id, history])
   return (
     <div>GAME PAGE</div>
   )
