@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 import { dataItems } from '../../dataItems'
 import GameCarousel from '../../components/game-carousel'
+import GameBoxText from '../../components/game-box-text'
 
 interface IGamePageProps {
   match: any
@@ -19,6 +20,7 @@ const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
   return (
     <div>
       <GameCarousel />
+      <GameBoxText />
     </div>
   )
 }
