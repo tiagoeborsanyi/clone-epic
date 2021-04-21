@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './card.scss'
 
@@ -9,7 +10,7 @@ interface ICardProps {
 
 const Card: React.FC<ICardProps> = ({ urlImg, otherProps }) => (
   <div className='card'>
-    <div className='card__img' style={{backgroundImage: `url(${urlImg})`}}></div>
+    <Link to={`/game/${otherProps.id}`} className='card__img-link'><div className='card__img' style={{backgroundImage: `url(${urlImg})`}} /></Link>
     <h3 className='card__title'>{otherProps.title.slice(0, 23)} {otherProps.title.length > 22 && '...'}</h3>
     <h4 className='card__subtitle'>{otherProps.subtitle}</h4>
     <span className='card__percent'>{otherProps.discount}</span>
