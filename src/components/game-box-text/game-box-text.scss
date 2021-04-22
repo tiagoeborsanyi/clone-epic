@@ -123,9 +123,53 @@
 
   &__desc {
     grid-column: 1 / -1;
+    overflow: hidden;
+    display: block;
+    // transition: all 1s;
     
     & > h3 {
       margin: 3rem 0 1.5rem 0;
     }
   }
+
+  &__button {
+    grid-column: 1 / -1;
+    position: relative;
+
+    &--shadow {
+      height: 17rem;
+      width: 100%;
+      background: linear-gradient(rgba(28, 28, 28, 0), rgb(28, 28, 28));
+      background-image: linear-gradient(rgba(28, 28, 28, 0), rgb(28, 28, 28));
+      background-position-x: initial;
+      background-position-y: initial;
+      background-clip: initial;
+      background-color: initial;
+      background-size: initial;
+      background-attachment: initial;
+      background-origin: initial;
+      position: absolute;
+      top: -17rem;
+    }
+
+    & > button {
+      width: 100%;
+      height: 5rem;
+      background-color: $color-secondary;
+      border: none;
+      color: #fff;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $corlor-hover-1;
+      }
+    }
+  }
+}
+
+.visible {
+  display: block;
+}
+.invisible {
+  display: none;
 }
