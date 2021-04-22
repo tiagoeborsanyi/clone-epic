@@ -66,17 +66,18 @@
     grid-column: 2 / 3;
 
     & > button {
-      height: 4rem;
+      height: 5rem;
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 5px;
       border: none;
-      background-color: #fff;
+      background-color: $button-green;
+      color: #fff;
       padding-right: 15%;
       position: relative;
-      font-weight: 600;
+      font-weight: 500;
       text-transform: uppercase;
 
       &::after {
