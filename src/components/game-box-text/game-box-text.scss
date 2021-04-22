@@ -102,6 +102,8 @@
 }
 
 .game-box-text-about {
+  margin-bottom: 15rem;
+  transition: all .3s;
   &__title {
     grid-column: 1 / 2;
     font-size: 1.5rem;
@@ -125,16 +127,22 @@
     grid-column: 1 / -1;
     overflow: hidden;
     display: block;
-    // transition: all 1s;
+    transition: all .5s;
+    position: relative;
     
-    & > h3 {
+    & > div h3 {
       margin: 3rem 0 1.5rem 0;
+      position: inherit;
+      z-index: 90;
     }
   }
 
   &__button {
     grid-column: 1 / -1;
-    position: relative;
+    position: absolute;
+    // bottom: 0;
+    width: 100%;
+    transition: top .5s;
 
     &--shadow {
       height: 17rem;
@@ -161,7 +169,7 @@
 
       &:hover {
         cursor: pointer;
-        background-color: $corlor-hover-1;
+        background-color: #353535;
       }
     }
   }
