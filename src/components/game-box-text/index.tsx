@@ -69,7 +69,7 @@ const GameBoxText = () => {
             <span>-</span>
           </div>
 
-          <div className='game-box-text-about-content__desc' style={expand ? {height: 'calc(100% + 7rem)'} : {height: '50%'}}>
+          <div className='game-box-text-about-content__desc' style={expand ? {height: '100%'} : {height: '50%'}}>
             <div>
               <h3>Grand Theft Auto V: Edição Premium</h3>
               <p>
@@ -101,7 +101,7 @@ const GameBoxText = () => {
               </p>
             </div>
 
-            <div className='game-box-text-about-content__button' style={!expand ? {bottom: '21%'} : {bottom: '0%'}}>
+            <div className='game-box-text-about-content__button'>
               <div className={`game-box-text-about-content__button--shadow ${expand && 'invisible'}`}></div>
               <button onClick={handleExpand}>
                 MOSTRAR MENOS
