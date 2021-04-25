@@ -111,6 +111,23 @@ const GameBoxText = () => {
         </div>
       </div>
 
+      <div className='game-box-text-columns game-box-text-rank'>
+        <div className='game-box-text-rank__title'>
+          <h3>Classificações</h3>
+        </div>
+        <div className='game-box-text-rank-content'>
+          <div className='game-box-text-rank-content__rating'>
+
+          </div>
+          <div className='game-box-text-rank-content__all-avaliations'>
+            
+          </div>
+          <div className='game-box-text-rank-content__cards'>
+
+          </div>
+        </div>
+      </div>
+
     </section>
   )
 }
