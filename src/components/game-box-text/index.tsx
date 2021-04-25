@@ -117,7 +117,20 @@ const GameBoxText = () => {
         </div>
         <div className='game-box-text-rank-content'>
           <div className='game-box-text-rank-content__rating'>
+            <div className='game-box-text-rank-content__rating--card'>
+              <div className='game-box-text-rank-content__rating--percent'>99%</div>
+              <span className='game-box-text-rank-content__rating--name'>Críticoa recomendam</span>
+            </div>
 
+            <div className='game-box-text-rank-content__rating--card'>
+              <div className='game-box-text-rank-content__rating--percent'>96</div>
+              <span className='game-box-text-rank-content__rating--name'>Média dos principais críticos</span>
+            </div>
+
+            <div className='game-box-text-rank-content__rating--card'>
+              <div className='game-box-text-rank-content__rating--percent'>Poderoso</div>
+              <span className='game-box-text-rank-content__rating--name'>Classificação OpenCritic</span>
+            </div>
           </div>
           <div className='game-box-text-rank-content__all-avaliations'>
             
