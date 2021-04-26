@@ -188,7 +188,11 @@ const GameBoxText = () => {
         </div>
       </div>
 
-      
+      <div className='game-box-text-columns '>
+        <div className='game-box-text-rank__title'>
+          <h3>Especificações</h3>
+        </div>
+      </div>
 
     </section>
   )
