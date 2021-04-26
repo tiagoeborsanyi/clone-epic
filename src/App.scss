@@ -27,6 +27,9 @@
 }
 
 .footer {
+  height: 60rem;
   grid-row: 3 / -1;
-  grid-column: 2 / 3;
+  grid-column: 1 / -1;
+  margin-top: 10rem;
+  background-color: $footer-background;
 }

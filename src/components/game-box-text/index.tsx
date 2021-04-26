@@ -36,7 +36,7 @@ const GameBoxText = () => {
 
       <div className='game-box-text-columns game-box-text-about' style={!expand ? {height: '50rem', overflow: 'hidden'} : {height: '100%'}}>
         <div className='game-box-text-about__title'>
-          <h3>Sobre Grand Theft Auto V</h3>
+          <h3 style={expand ? {position: 'sticky', top: '6.6rem'} : {}}>Sobre Grand Theft Auto V</h3>
         </div>
         <div className='game-box-text-about-content'>
 

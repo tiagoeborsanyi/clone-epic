@@ -1,5 +1,8 @@
+@import '../../../index.scss';
+
 .selected {
-	background-image: linear-gradient(rgba(66,66,66, .7), rgba(66,66,66, .3));
+	// background-image: linear-gradient(rgba(66,66,66, .7), rgba(66,66,66, .3));
+	background-color: $item-caroussel-background;
 }
 
 .card-carousel {
