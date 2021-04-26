@@ -1,7 +1,7 @@
 import './game-carousel.scss'
 
 const GameCarousel = () => (
-  <div className='game-carousel'>carousel</div>
+  <div className='game-carousel'></div>
 )
 
 export default GameCarousel
