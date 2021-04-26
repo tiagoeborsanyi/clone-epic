@@ -185,7 +185,8 @@
   display: none;
 }
 
-.game-box-text-rank {
+.game-box-text-rank,
+.game-box-text-espec {
   &__title {
     grid-column: 1 / 2;
     font-size: 1.5rem;
@@ -318,4 +319,94 @@
     font-size: 1.3rem;
   }
 
+}
+
+.game-box-text-espec-content {
+  width: 100%;
+  display: grid;
+  background-color: $color-secondary;
+  padding: 6rem 5rem;
+  border-radius: 4px;
+
+  &__title {
+    height: 5rem;
+    border-bottom: 1px solid $buttom-color;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: .5rem;
+      width: 8%;
+      background-color: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    & > h3 {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
+
+  &__requisitos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-column-gap: 3rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 1px;
+      width: calc(100% + 10rem);
+      background-color: $buttom-color;
+      position: absolute;
+      bottom: 0;
+      left: -5rem;
+      right: 0rem;
+    }
+
+    &--content {
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+
+      & > h3 {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 4rem;
+      }
+
+      & > div {
+        margin: 3rem 0;
+      }
+
+      & > div h3 {
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      & > div p {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &__politica {
+    width: 80%;
+    margin-top: 5rem;
+    color: $buttom-color;
+    justify-self: center;
+    text-align: center;
+
+    & > p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+
+    & > span {
+      color: #fff;
+    }
+  }
 }

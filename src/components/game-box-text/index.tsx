@@ -34,7 +34,7 @@ const GameBoxText = () => {
         </div>
       </div>
 
-      <div className='game-box-text-columns game-box-text-about' style={!expand ? {height: '500px', overflow: 'hidden'} : {height: '100%'}}>
+      <div className='game-box-text-columns game-box-text-about' style={!expand ? {height: '50rem', overflow: 'hidden'} : {height: '100%'}}>
         <div className='game-box-text-about__title'>
           <h3>Sobre Grand Theft Auto V</h3>
         </div>
@@ -188,9 +188,133 @@ const GameBoxText = () => {
         </div>
       </div>
 
-      <div className='game-box-text-columns '>
-        <div className='game-box-text-rank__title'>
+      <div className='game-box-text-columns game-box-text-espec'>
+        <div className='game-box-text-espec__title'>
           <h3>Especificações</h3>
+        </div>
+
+        <div className='game-box-text-espec-content'>
+          <div className='game-box-text-espec-content__title'>
+            <h3>windows</h3>
+          </div>
+
+          <div className='game-box-text-espec-content__requisitos'>
+            <div className='game-box-text-espec-content__requisitos--content'>
+              <h3>
+                Minimo
+              </h3>
+              <div>
+                <h3>
+                  Sistema Operacional
+                </h3>
+                <p>
+                  Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1, Windows Vista 64 Bit Service Pack 2* (*placa de vídeo NVIDIA recomendada para o Vista)
+                </p>
+              </div>
+              <div>
+                <h3>
+                  Processador
+                </h3>
+                <p>
+                  Intel Core 2 Quad CPU Q6600 com 2.40 GHz (4 CPUs) / AMD Phenom 9850 Quad-Core (4 CPUs) com 2.5 GHz
+                </p>
+              </div>
+              <div>
+                <h3>
+                  Memória
+                </h3>
+                <p>
+                  4 GB de RAM
+                </p>
+              </div>
+              <div>
+                <h3>
+                Placa de Vídeo
+                </h3>
+                <p>
+                NVIDIA 9800 GT 1 GB / AMD HD 4870 1 GB (DX 10, 10.1, 11)
+                </p>
+              </div>
+              <div>
+                <h3>
+                Placa de Som
+                </h3>
+                <p>
+                100% compatível com DirectX 10
+                </p>
+              </div>
+              <div>
+                <h3>
+                Espaço em disco
+                </h3>
+                <p>
+                90 GB available space
+                </p>
+              </div>
+            </div>
+            <div className='game-box-text-espec-content__requisitos--content'>
+            <h3>
+                Recomendado
+              </h3>
+              <div>
+                <h3>
+                  Sistema Operacional
+                </h3>
+                <p>
+                Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1
+                </p>
+              </div>
+              <div>
+                <h3>
+                  Processador
+                </h3>
+                <p>
+                Intel Core i5 3470 com 3.2GHZ (4 CPUs) / AMD X8 FX-8350 com 4GHZ (8 CPUs)
+                </p>
+              </div>
+              <div>
+                <h3>
+                  Memória
+                </h3>
+                <p>
+                8 GB de RAM
+                </p>
+              </div>
+              <div>
+                <h3>
+                Placa de Vídeo
+                </h3>
+                <p>
+                NVIDIA GTX 660 2GB / AMD HD7870 2GB
+                </p>
+              </div>
+              <div>
+                <h3>
+                Placa de Som
+                </h3>
+                <p>
+                100% compatível com DirectX 10
+                </p>
+              </div>
+              <div>
+                <h3>
+                Espaço em disco
+                </h3>
+                <p>
+                90 GB available space
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className='game-box-text-espec-content__politica'>
+            <p>
+              ©2008 - 2018 Rockstar Games, Inc. Rockstar Games, Grand Theft Auto, os logotipos GTA Cinco, GTA Online e o R* da Rockstar Games são marcas comerciais e/ou registradas da Take-Two Interactive Software, Inc. nos E.U.A e/ou outros países. Dolby e os símbolos duplo-D são marcas de Dolby Laboratories. Utiliza Bink Video. Copyright © 1997-2012 da RAD Game Tools, Inc. Tecnologia de captura de movimento euphoria motion synthesis da NaturalMotion. O código euphoria é (c) NaturalMotion 2008. "NaturalMotion", "euphoria" e os logotipos da NaturalMotion e euphoria são marcas da NaturalMotion. Usado sob licença. Este software inclui Autodesk® Scaleform®, © 2013 Autodesk, Inc. Todas as demais marcas e marcas registradas são propriedades dos seus respectivos donos. Todos os direitos reservados. Licença e termos de uso do software em www.rockstargames.com/eula?locale=br; termos de conta online em www.rockstargames.com/socialclub. Violação do EULA, Código de Conduta, ou demais políticas de uso poderão resultar na restrição ou cancelamento do acesso ao jogo ou à conta online. Para assistência técnica e ao cliente, visite www.rockstargames.com/support. Acesso intransferível para recursos como conteúdo exclusivo/desbloqueável/para download/online e serviços ou funções, tais como serviços de multijogador ou conteúdo bônus, podem exigir código de série único, pagamento de tarifa adicional e/ou cadastramento de conta (13+). Acesso a recursos especiais pode precisar de uma conexão com a internet, não estar disponível a todos os usuários e pode ser encerrado, modificado e/ou oferecido sob diferentes termos mediante um aviso prévio de 30 dias. É estritamente proibido fazer cópias não autorizadas, aplicar engenharia reversa, transmitir, apresentar publicamente, alugar, cobrar para jogar ou burlar a proteção contra cópias. O conteúdo deste jogo é puramente fictício e não tem a intenção de representar ou descrever nenhum evento, pessoa ou entidade real. Toda e qualquer semelhança é pura coincidência. Os desenvolvedores e editores deste jogo não apoiam, aceitam ou encorajam de modo algum a adoção dos comportamentos exibidos neste jogo. Rockstar Games, 622, Broadway, Nova Iorque, NY, 10012 T2 Take Two Interactive Para informações sobre os serviços online, tarifas e termos de licença de software que possam ser aplicados a este jogo, visite www.rockstargames.com.
+            </p>
+            <span>
+              Politica de Privacidade
+            </span>
+          </div>
         </div>
       </div>
 
