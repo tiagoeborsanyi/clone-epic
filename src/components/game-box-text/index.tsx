@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BsBoxArrowInUpRight } from 'react-icons/bs'
 
 import './game-box-text.scss'
 
@@ -133,13 +134,61 @@ const GameBoxText = () => {
             </div>
           </div>
           <div className='game-box-text-rank-content__all-avaliations'>
-            
+            <span>ver todas as avaliações</span>
+            <BsBoxArrowInUpRight />
           </div>
           <div className='game-box-text-rank-content__cards'>
+            <div className='game-box-text-rank-content__cards--card'>
+              <div className='game-box-text-rank-content__cards--title'>
+                <h3>PC Gamer</h3>
+                <span>por Chris Thursten</span>
+              </div>
+              <div className='game-box-text-rank-content__cards--content'>
+                <h3>92/100</h3>
+                <p>
+                  A sandbox of extraordinary scope created with a masterful attention to detail. A patchy campaign doesn't spoil this wonderful, evocative city.
+                </p>
+                <span>ler avaliação completa</span>
+              </div>
+            </div>
 
+            <div className='game-box-text-rank-content__cards--card'>
+              <div className='game-box-text-rank-content__cards--title'>
+                <h3>IGN</h3>
+                <span>por Dan Stapleton</span>
+              </div>
+              <div className='game-box-text-rank-content__cards--content'>
+                <h3>10/10</h3>
+                <p>
+                  It's one of the best games available today.
+                </p>
+                <span>ler avaliação completa</span>
+              </div>
+            </div>
+
+            <div className='game-box-text-rank-content__cards--card'>
+              <div className='game-box-text-rank-content__cards--title'>
+                <h3>Game Revolution</h3>
+                <span>por Daniel Buischoff</span>
+              </div>
+              <div className='game-box-text-rank-content__cards--content'>
+                <h3>5/5</h3>
+                <p>
+                  Grand Theft Auto V is one of the most expansive and impressive games I've ever played.
+                </p>
+                <span>ler avaliação completa</span>
+              </div>
+            </div>
+          </div>
+          <div className='game-box-text-rank-content__reviews'>
+            <span>
+              Avaliações fornecidas pela OpenCritic
+            </span>
           </div>
         </div>
       </div>
+
+      
 
     </section>
   )
