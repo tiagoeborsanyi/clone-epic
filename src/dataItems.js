@@ -47,7 +47,7 @@ export const dataItems = [
   {
     id: '3',
     urlImage: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/snow-runner.webp?alt=media',
-    imagePageGame: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/snowrunner-page-game.jpg',
+    imagePageGame: 'https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/snowrunner-page-game.jpg?alt=media',
     title: 'SnowRunner',
     subtitle: 'Saber Interactive | Focus Homer',
     discount: '40',

@@ -35,7 +35,7 @@ const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
     }
     setGame(filterData[0])
   }, [match.params.id, history])
-  console.log(game)
+  console.log('gamePage: ', game)
   return (
     <div>
       <GameCarousel imagePageGame={game ? game['imagePageGame'] : ''} />
