@@ -1,7 +1,7 @@
 @import '../../index.scss';
 
 .footer {
-  height: 60rem;
+  height: 55rem;
   grid-row: 3 / -1;
   grid-column: 1 / -1;
   margin-top: 10rem;
@@ -86,5 +86,33 @@
 
   & > p {
     font-size: 1.3rem;
+  }
+}
+
+.footer-politics {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7rem;
+
+  &__items {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    font-size: 1.2rem;
+    margin-right: 3rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__arrows {
+    display: flex;
+  }
+
+  &__arrow {
+    font-size: 3rem;
+    margin-left: 1rem;
   }
 }
