@@ -13,6 +13,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
 
   &__items {
     list-style: none;
@@ -22,6 +23,10 @@
   &__item {
     margin-right: 1rem;
     font-size: 3rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__arrow {
@@ -33,20 +38,53 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 50rem));
   font-size: 1.3rem;
+  margin-bottom: 6rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgb(146, 145, 145);
 
   &__about {
+    & > h3 {
+      color: rgb(146, 145, 145); 
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
     & > div {
       display: grid;
       grid-template-columns: repeat(3, minmax(min-content, max-content));
       grid-column-gap: 2rem;
+
+      & > span {
+        color: #fff;
+        font-weight: 400;
+      }
     }
+    margin-bottom: 2rem;
   }
 
   &__games {
+    & > h3 {
+      color: rgb(146, 145, 145); 
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
     & > div {
       display: grid;
       grid-template-columns: repeat(2, minmax(min-content, max-content));
       grid-column-gap: 2rem;
+
+      & > span {
+        color: #fff;
+        font-weight: 400;
+      }
     }
+  }
+}
+
+.footer-legal {
+  max-width: 75%;
+
+  & > p {
+    font-size: 1.3rem;
   }
 }
