@@ -16,6 +16,9 @@ const Card: React.FC<ICardProps> = ({ urlImg, otherProps }) => (
       <button className='card__button'>
         <BsPlusCircle />
       </button>
+      <span className='card__tooltip'>
+        Para Lista de Desejos
+      </span>
     </Link>
     <h3 className='card__title'>{otherProps.title.slice(0, 23)} {otherProps.title.length > 22 && '...'}</h3>
     <h4 className='card__subtitle'>{otherProps.subtitle}</h4>

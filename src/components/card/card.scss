@@ -69,14 +69,31 @@
     opacity: 0;
 
     & > svg {
-      stroke-width: 1;
+      // stroke-width: 1;
+      fill: rgb(29, 29, 29);
     }
+  }
+
+  &__tooltip {
+    position: absolute;
+    top: -4.5rem;
+    right: 0;
+    font-size: 1.4rem;
+    padding: 1rem 1.4rem;
+    border-radius: 5px;
+    background-color: $color-secondary;
+    color: #fff;
+    opacity: 0;
   }
 
   &__img:hover + .card__button,
   .card__button:hover {
     opacity: 1;
     cursor: pointer;
+  }
+
+  &__button:hover + .card__tooltip {
+    opacity: 1;
   }
 
   &__title {
