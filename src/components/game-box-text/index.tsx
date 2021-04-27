@@ -3,7 +3,11 @@ import { BsBoxArrowInUpRight } from 'react-icons/bs'
 
 import './game-box-text.scss'
 
-const GameBoxText = () => {
+interface GameProps {
+  game: any
+}
+
+const GameBoxText:React.FC<GameProps> = ({ game }) => {
   const [expand, setExapande] = useState(false)
 
   function handleExpand() {
@@ -24,7 +28,7 @@ const GameBoxText = () => {
             </p>
           </div>
           <div className='game-box-text-description-content__value'>
-            <span>R$ 69,99</span>
+            <span>R$ {game.newValue}</span>
           </div>
           <div className='game-box-text-description-content__button'>
             <button>
@@ -36,7 +40,7 @@ const GameBoxText = () => {
 
       <div className='game-box-text-columns game-box-text-about' style={!expand ? {height: '50rem', overflow: 'hidden'} : {height: '100%'}}>
         <div className='game-box-text-about__title'>
-          <h3 style={expand ? {position: 'sticky', top: '6.6rem'} : {}}>Sobre Grand Theft Auto V</h3>
+          <h3 style={expand ? {position: 'sticky', top: '6.6rem'} : {}}>Sobre {game.title}</h3>
         </div>
         <div className='game-box-text-about-content'>
 

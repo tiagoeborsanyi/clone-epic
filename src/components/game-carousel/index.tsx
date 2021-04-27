@@ -1,7 +1,14 @@
 import './game-carousel.scss'
 
-const GameCarousel = () => (
-  <div className='game-carousel'></div>
+interface GameCarouselProps {
+  imagePageGame: string
+}
+
+const GameCarousel: React.FC<GameCarouselProps> = ({ imagePageGame }) => (
+  <div 
+    className='game-carousel'
+    style={{backgroundImage: `url(${imagePageGame})`}}
+  ></div>
 )
 
 export default GameCarousel
