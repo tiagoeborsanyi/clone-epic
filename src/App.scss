@@ -25,11 +25,3 @@
   grid-template-rows: minmax(calc(100vh - 6rem), 1fr);
   margin: 0 auto;
 }
-
-.footer {
-  height: 60rem;
-  grid-row: 3 / -1;
-  grid-column: 1 / -1;
-  margin-top: 10rem;
-  background-color: $footer-background;
-}
