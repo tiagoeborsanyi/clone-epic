@@ -5,5 +5,48 @@
   grid-row: 3 / -1;
   grid-column: 1 / -1;
   margin-top: 10rem;
+  padding: 5rem;
   background-color: $footer-background;
+}
+
+.footer-social {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__items {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 1rem;
+    font-size: 3rem;
+  }
+
+  &__arrow {
+    font-size: 3rem;
+  }
+}
+
+.footer-sources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 50rem));
+  font-size: 1.3rem;
+
+  &__about {
+    & > div {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(min-content, max-content));
+      grid-column-gap: 2rem;
+    }
+  }
+
+  &__games {
+    & > div {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(min-content, max-content));
+      grid-column-gap: 2rem;
+    }
+  }
 }
