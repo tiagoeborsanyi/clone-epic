@@ -1,8 +1,12 @@
 import './login.scss'
 
+import SignUp from '../../components/login/signup'
+
 const Login: React.FC = () => {
   return (
-    <div>LOGIN</div>
+    <div className='login'>
+      <SignUp />
+    </div>
   )
 }
 
