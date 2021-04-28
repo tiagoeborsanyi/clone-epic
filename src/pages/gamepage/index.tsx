@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+import { useAuth } from '../../hooks/auth'
 import { dataItems } from '../../dataItems'
 import GameCarousel from '../../components/game-carousel'
 import GameBoxText from '../../components/game-box-text'
@@ -26,6 +27,7 @@ interface IGamePageProps {
 }
 
 const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
+  const { logged } = useAuth()
   const [game, setGame] = useState<GameProps | undefined>()
 
   useEffect(() => {
@@ -35,11 +37,11 @@ const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
     }
     setGame(filterData[0])
   }, [match.params.id, history])
-  console.log('gamePage: ', game)
+  
   return (
     <div>
       <GameCarousel imagePageGame={game ? game['imagePageGame'] : ''} />
-      <GameBoxText game={game} />
+      <GameBoxText game={game} logged={logged} />
     </div>
   )
 }

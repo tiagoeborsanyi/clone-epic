@@ -1,19 +1,28 @@
 import { useState } from 'react'
 import { BsBoxArrowInUpRight } from 'react-icons/bs'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 import './game-box-text.scss'
 
-interface GameProps {
+interface GameProps extends RouteComponentProps {
   game: any
+  logged: boolean
 }
 
-const GameBoxText:React.FC<GameProps> = ({ game }) => {
+const GameBoxText:React.FC<GameProps> = ({ game, logged, history }) => {
   const [expand, setExapande] = useState(false)
-  console.log('GAME: ', game)
 
   function handleExpand() {
     setExapande(!expand)
     console.log(expand)
+  }
+
+  const handleToCart = () => {
+    if (logged) {
+      alert('authenticado')
+    } else {
+      history.push('/login')
+    }
   }
 
   return (
@@ -32,7 +41,7 @@ const GameBoxText:React.FC<GameProps> = ({ game }) => {
             <span>R$ {game ? game.newValue : ''}</span>
           </div>
           <div className='game-box-text-description-content__button'>
-            <button>
+            <button onClick={handleToCart}>
               compre agora
             </button>
           </div>
@@ -327,4 +336,4 @@ const GameBoxText:React.FC<GameProps> = ({ game }) => {
   )
 }
 
-export default GameBoxText
+export default withRouter(GameBoxText)
