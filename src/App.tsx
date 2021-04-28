@@ -2,6 +2,7 @@ import './App.scss';
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 import Header from './components/header'
+import Login from './pages/login'
 import Homepage from './pages/homepage'
 import GamePage from './pages/gamepage'
 import Footer from './components/footer'
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Homepage} />
           <Route path='/game/:id' component={GamePage} />
+          <Route path='/login' component={Login} />
           <Redirect to='/' />
         </Switch>
       </div>

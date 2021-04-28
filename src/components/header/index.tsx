@@ -18,7 +18,7 @@ const Header = () => (
     </nav>
     <div className="menu">
       <IoIosGlobe />
-      <Link to="/" className="menu__link">
+      <Link to="/login" className="menu__link">
         <IoIosPerson />
         entrar
       </Link>
