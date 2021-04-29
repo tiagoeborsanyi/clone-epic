@@ -66,7 +66,16 @@ const SignUp = () => {
         <Checkbox>
           Eu li e concordo com termos de serviços.
         </Checkbox>
+        <button className='login-button'>
+          CONTINUAR
+        </button>
       </form>
+      <p>
+        Politica de Privacidade
+      </p>
+      <span>
+        Possui uma conta da Epic Games? <a href='#'>Entrar</a>
+      </span>
     </div>
   )
 }

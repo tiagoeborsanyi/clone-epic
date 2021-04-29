@@ -1,7 +1,7 @@
 @import '../../../index.scss';
 
 .signup {
-  height: 90%;
+  height: auto;
   max-height: 80rem;
   width: 48rem;
   display: flex;
@@ -14,6 +14,22 @@
     font-size: 5rem;
     align-self: center;
   }
+
+  & > p {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  & > span {
+    text-align: center;
+    margin: 3rem 0;
+    color: rgb(86, 86, 86);
+    font-size: 1.3rem;
+
+    & > a {
+      margin-left: 1rem;
+    }
+  }
 }
 
 .signup-title {
@@ -22,5 +38,16 @@
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: 1rem;
+}
+
+.login-button {
+  height: 5rem;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background: rgb(25, 25, 25);
+  color: rgb(86, 86, 86);
+  margin: 3rem 0;
 }
 

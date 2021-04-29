@@ -21,7 +21,7 @@ export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, va
       onChange={handleInputChanged}
     />
     {displayInfo && <AiOutlineInfoCircle className='form-svg' />}
-    <span className='form-span' style={required ? {opacity: '1'} : {}}>necessário</span>
+    <span className='form-span' style={required ? {opacity: '1', display: 'block'} : {}}>necessário</span>
   </div>
 )
 

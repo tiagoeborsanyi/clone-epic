@@ -1,7 +1,7 @@
 .signup-form__block {
   width: 100%;
   position: relative;
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
 
   &--checkbox {
     margin-top: 2rem;
@@ -65,12 +65,14 @@
   position: absolute;
   top: 1.5rem;
   right: 5.5rem;
-  opacity: 0;
+  // opacity: 0;
+  display: none;
 }
 .form-svg:hover {
   cursor: pointer;
 
   & ~ .form-span {
-    opacity: 1;
+    // opacity: 1;
+    display: block;
   }
 }
