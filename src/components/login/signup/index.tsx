@@ -1,20 +1,54 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { SiEpicgames } from 'react-icons/si'
 
 import './signup.scss'
 import { Input, Checkbox } from '../../form/input'
 
 const SignUp = () => {
-  const [name, setName] = useState('')
-  const [required, setRequired] = useState(false)
+  // const [formIsValid, setFormIsValid] = useState(false)
+  const [user, setUser] = useState({
+    firstName: {
+      value: '',
+      type: 'firstName',
+      required: false
+    },
+    lastName: {
+      value: '',
+      type: 'lastName',
+      required: false
+    },
+    displayName: {
+      value: '',
+      type: 'displayName',
+      required: false
+    },
+    email: {
+      value: '',
+      type: 'email',
+      required: false
+    },
+    password: {
+      value: '',
+      type: 'password',
+      required: false
+    }
+  })
 
   const handleInputChanged = (e: any) => {
-    setName(e.target.value)
-    if (e.target.value.length === 0) {
-      setRequired(true)
-    } else {
-      setRequired(false)
+    const {name, value} = e.target
+    const updateUser = {
+      ...user,
+      [name]: {
+        type: name,
+        value: value,
+        required: value.length === 0 ? true : false
+      }
     }
+    const updateFormValid = Object.values(updateUser)
+    // console.log(updateFormValid)
+    const testRequired = updateFormValid.filter(el => el.required === true)
+    console.log(testRequired) // se testRequired retornar com length maior que zero entao o botao desabilata caso contrario ele habilita para enviar os dados
+    setUser(updateUser)
   }
   
   return (
@@ -25,38 +59,43 @@ const SignUp = () => {
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
           <div style={{width: '49%'}}>
             <Input 
-              value={name}
+              value={user['firstName'].value}
+              type={user['firstName'].type}
               holder='*Nome'
-              required={required}
+              required={user['firstName'].required}
               handleInputChanged={handleInputChanged}
             />
           </div>
           <div style={{width: '49%'}}>
             <Input 
-              value={name}
+              value={user['lastName'].value}
+              type={user['lastName'].type}
               holder='*Sobrenome'
-              required={required}
+              required={user['lastName'].required}
               handleInputChanged={handleInputChanged}
             />
           </div>
         </div>
         <Input 
-          value={name}
+          value={user['displayName'].value}
+          type={user['displayName'].type}
           holder='*Nome de exibição'
-          required={required}
+          required={user['displayName'].required}
           displayInfo
           handleInputChanged={handleInputChanged}
         />
         <Input 
-          value={name}
+          value={user['email'].value}
+          type={user['email'].type}
           holder='*Endereço de E-mail'
-          required={required}
+          required={user['email'].required}
           handleInputChanged={handleInputChanged}
         />
         <Input 
-          value={name}
+          value={user['password'].value}
+          type={user['password'].type}
           holder='*Senha'
-          required={required}
+          required={user['password'].required}
           displayInfo
           handleInputChanged={handleInputChanged}
         />

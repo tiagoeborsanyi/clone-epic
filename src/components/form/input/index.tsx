@@ -5,12 +5,13 @@ import './input.scss'
 interface IInputValues {
   required: boolean
   handleInputChanged:  (event: React.FormEvent<HTMLInputElement>) => void
-  value: string
+  value?: string
   holder: string
   displayInfo?: boolean
+  type?: string
 }
 
-export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, value, holder, displayInfo }) => (
+export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, value, holder, displayInfo, type }) => (
   <div className='signup-form__block'>
     <input
       className='signup-input__text'
@@ -19,6 +20,7 @@ export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, va
       placeholder={holder}
       style={required ? {backgroundColor: 'rgb(85,67,67)'} : {}}
       onChange={handleInputChanged}
+      name={type}
     />
     {displayInfo && <AiOutlineInfoCircle className='form-svg' />}
     <span className='form-span' style={required ? {opacity: '1', display: 'block'} : {}}>necessário</span>

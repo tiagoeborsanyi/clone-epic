@@ -4,6 +4,7 @@ import { auth } from '../firebase/firebase.utils'
 interface IAUthContext {
   logged: boolean
   signIn(email: string, password: string): void
+  signUp(displayName: string, name: string, email: string, password: ''): void
   signOut(): void
 }
 
@@ -23,12 +24,16 @@ const AuthProvider: React.FC = ({ children }) => {
       .catch(error => console.log(error))
   }
 
+  const signUp = () => {
+
+  }
+
   const signOut = () => {
     setLogged(false)
   }
 
   return (
-    <AuthContext.Provider value={{logged, signIn, signOut}}>
+    <AuthContext.Provider value={{logged, signIn, signUp, signOut}}>
       {children}
     </AuthContext.Provider>
   )
