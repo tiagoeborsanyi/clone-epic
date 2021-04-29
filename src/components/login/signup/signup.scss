@@ -1,0 +1,44 @@
+@import '../../../index.scss';
+
+.signup {
+  height: 80rem;
+  width: 48rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #202020;
+  padding: 3rem 6rem 2rem 6rem;
+
+  & > svg {
+    font-size: 5.5rem;
+    align-self: center;
+  }
+}
+
+.signup-title {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.signup-form {
+  & > input {
+    height: 5rem;
+    width: 100%;
+    background: #2b2b2b;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 1.5rem;
+    color: #fff;
+
+    &::placeholder {
+      color: #757575;
+    }
+
+    &:focus {
+      background-color: #484848;
+    }
+  }
+}

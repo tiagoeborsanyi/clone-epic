@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from 'react'
+import { auth } from '../firebase/firebase.utils'
 
 interface IAUthContext {
   logged: boolean
@@ -12,7 +13,14 @@ const AuthProvider: React.FC = ({ children }) => {
   const [logged, setLogged] = useState(false)
 
   const signIn = (email: string, password: string) => {
-    setLogged(true)
+    auth.signInWithEmailAndPassword(email, password)
+      .then(userCredential => {
+        const user = userCredential.user
+        if (user) {
+          setLogged(true)
+        }
+      })
+      .catch(error => console.log(error))
   }
 
   const signOut = () => {
