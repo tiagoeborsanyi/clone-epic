@@ -28,10 +28,10 @@ const SignUp = () => {
             placeholder='*Nome de exibição'
             value={name}
             onChange={(e: React.FormEvent<HTMLInputElement>) => handleInputChanged(e)}
-            style={required ? {backgroundColor: 'red'} : {}}
+            style={required ? {backgroundColor: 'rgb(85,67,67)'} : {}}
           />
           <AiOutlineInfoCircle className='form-svg' />
-          <span className='form-span' style={required ? {opacity: '1'} : {}}>Campo necessario</span>
+          <span className='form-span' style={required ? {opacity: '1'} : {}}>necessário</span>
         </div>
       </form>
     </div>
