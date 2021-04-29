@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { SiEpicgames } from 'react-icons/si'
 
 import './signup.scss'
-import Input from '../../form/input'
+import { Input, Checkbox } from '../../form/input'
 
 const SignUp = () => {
   const [name, setName] = useState('')
@@ -60,7 +60,12 @@ const SignUp = () => {
           displayInfo
           handleInputChanged={handleInputChanged}
         />
-        
+        <Checkbox>
+          Quero receber notícias, pesquisas e ofertas especiais da Epic Games.
+        </Checkbox>
+        <Checkbox>
+          Eu li e concordo com termos de serviços.
+        </Checkbox>
       </form>
     </div>
   )

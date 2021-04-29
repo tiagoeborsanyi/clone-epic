@@ -3,7 +3,15 @@
   position: relative;
   margin-bottom: 1rem;
 
-  & > input {
+  &--checkbox {
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.signup-input {
+  &__text {
     height: 5rem;
     width: 100%;
     background: #2b2b2b;
@@ -19,6 +27,26 @@
 
     &:focus {
       background-color: #484848;
+    }
+  }
+  
+  &__checkbox {
+    display: table;
+    height: 2.3rem;
+    width: 2.3rem;
+    background: rgb(69, 69, 69);
+    border: none;
+    appearance: none;
+    margin-right: 2rem;
+
+    &:checked {
+      background: rgb(69, 69, 69);
+    }
+
+    &--text {
+      font-size: 1.3rem;
+      color: #757575;
+      font-weight: 400;
     }
   }
 }
