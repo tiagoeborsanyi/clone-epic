@@ -1,0 +1,47 @@
+.signup-form__block {
+  width: 100%;
+  position: relative;
+
+  & > input {
+    height: 5rem;
+    width: 100%;
+    background: #2b2b2b;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 1.5rem;
+    color: #fff;
+
+    &::placeholder {
+      color: #757575;
+    }
+
+    &:focus {
+      background-color: #484848;
+    }
+  }
+}
+
+.form-svg {
+  font-size: 2rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;  
+}
+
+.form-span {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: absolute;
+  top: 1.5rem;
+  right: 5.5rem;
+  opacity: 0;
+}
+.form-svg:hover {
+  cursor: pointer;
+
+  & ~ .form-span {
+    opacity: 1;
+  }
+}
