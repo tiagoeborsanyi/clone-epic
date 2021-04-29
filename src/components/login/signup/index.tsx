@@ -9,15 +9,11 @@ const SignUp = () => {
   const [required, setRequired] = useState(false)
 
   const handleInputChanged = (e: any) => {
-    console.log('teste')
-    console.log(e.target.value, e.target.value.length)
     setName(e.target.value)
     if (e.target.value.length === 0) {
       setRequired(true)
-      console.log('verdade')
     } else {
       setRequired(false)
-      console.log('false')
     }
   }
   
@@ -26,12 +22,45 @@ const SignUp = () => {
       <SiEpicgames />
       <h3 className='signup-title'>cadastrar</h3>
       <form className='signup-form'>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+          <div style={{width: '49%'}}>
+            <Input 
+              value={name}
+              holder='*Nome'
+              required={required}
+              handleInputChanged={handleInputChanged}
+            />
+          </div>
+          <div style={{width: '49%'}}>
+            <Input 
+              value={name}
+              holder='*Sobrenome'
+              required={required}
+              handleInputChanged={handleInputChanged}
+            />
+          </div>
+        </div>
         <Input 
           value={name}
+          holder='*Nome de exibição'
+          required={required}
+          displayInfo
+          handleInputChanged={handleInputChanged}
+        />
+        <Input 
+          value={name}
+          holder='*Endereço de E-mail'
           required={required}
           handleInputChanged={handleInputChanged}
         />
-        {typeof required}
+        <Input 
+          value={name}
+          holder='*Senha'
+          required={required}
+          displayInfo
+          handleInputChanged={handleInputChanged}
+        />
+        
       </form>
     </div>
   )
