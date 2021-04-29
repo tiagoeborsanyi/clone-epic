@@ -1,7 +1,8 @@
 @import '../../../index.scss';
 
 .signup {
-  height: 80rem;
+  height: 90%;
+  max-height: 80rem;
   width: 48rem;
   display: flex;
   flex-direction: column;

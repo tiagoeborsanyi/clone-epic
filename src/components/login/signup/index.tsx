@@ -1,10 +1,15 @@
+import React, { useState } from 'react'
 import { SiEpicgames } from 'react-icons/si'
 
 import './signup.scss'
 
 const SignUp = () => {
-  const handleInputChanged = () => {
+  const [name, setName] = useState('')
 
+  const handleInputChanged = (e: any) => {
+    setName(e.target.value)
+    console.log(e.target.value)
+    console.log()
   }
   
   return (
@@ -15,7 +20,8 @@ const SignUp = () => {
         <input
           type="text"
           placeholder='*Nome de exibição'
-          onChange={handleInputChanged}
+          value={name}
+          onChange={(e: React.FormEvent<HTMLInputElement>) => handleInputChanged(e)}
         />
       </form>
     </div>
