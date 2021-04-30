@@ -25,7 +25,7 @@ const AuthProvider: React.FC = ({ children }) => {
   }
 
   const signUp = async (email: string, password: string, history?: any, displayName?: string, name?: string) => {
-    // console.log(email, password)
+    
     try {
       const user = await auth.createUserWithEmailAndPassword(email, password)
       console.log(user)

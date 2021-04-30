@@ -94,6 +94,7 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
           <div style={{width: '49%'}}>
             <Input 
+              typeContent='text'
               value={user['firstName'].value}
               type={user['firstName'].type}
               holder='*Nome'
@@ -102,7 +103,8 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
             />
           </div>
           <div style={{width: '49%'}}>
-            <Input 
+            <Input
+              typeContent='text'
               value={user['lastName'].value}
               type={user['lastName'].type}
               holder='*Sobrenome'
@@ -111,7 +113,8 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
             />
           </div>
         </div>
-        <Input 
+        <Input
+          typeContent='text'
           value={user['displayName'].value}
           type={user['displayName'].type}
           holder='*Nome de exibição'
@@ -119,14 +122,16 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
           displayInfo
           handleInputChanged={handleInputChanged}
         />
-        <Input 
+        <Input
+          typeContent='email'
           value={user['email'].value}
           type={user['email'].type}
           holder='*Endereço de E-mail'
           required={user['email'].required}
           handleInputChanged={handleInputChanged}
         />
-        <Input 
+        <Input
+          typeContent='password'
           value={user['password'].value}
           type={user['password'].type}
           holder='*Senha'

@@ -9,13 +9,14 @@ interface IInputValues {
   holder: string
   displayInfo?: boolean
   type?: string
+  typeContent: string
 }
 
-export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, value, holder, displayInfo, type }) => (
+export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, value, holder, displayInfo, type, typeContent }) => (
   <div className='signup-form__block'>
     <input
       className='signup-input__text'
-      type="text"
+      type={typeContent}
       value={value}
       placeholder={holder}
       style={required ? {backgroundColor: 'rgb(85,67,67)'} : {}}
