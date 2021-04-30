@@ -1,37 +1,60 @@
 import { useState } from 'react'
 import { SiEpicgames } from 'react-icons/si'
-import { Link } from 'react-router-dom'
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 
 import './signup.scss'
+import { useAuth } from '../../../hooks/auth'
 import { Input, Checkbox } from '../../form/input'
 
-const SignUp = () => {
+type propsTypesStates = {
+  value: string,
+  type: string,
+  required: boolean,
+  button: boolean
+}
+type UserState = {
+  firstName: propsTypesStates,
+  lastName: propsTypesStates,
+  displayName: propsTypesStates,
+  email: propsTypesStates
+  password: propsTypesStates
+
+}
+
+const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
+  const { signUp, logged } = useAuth()
+
   const [formIsValid, setFormIsValid] = useState(false)
-  const [user, setUser] = useState({
+  const [user, setUser] = useState<UserState>({
     firstName: {
       value: '',
       type: 'firstName',
-      required: false
+      required: false,
+      button: true
     },
     lastName: {
       value: '',
       type: 'lastName',
-      required: false
+      required: false,
+      button: true
     },
     displayName: {
       value: '',
       type: 'displayName',
-      required: false
+      required: false,
+      button: true
     },
     email: {
       value: '',
       type: 'email',
-      required: false
+      required: false,
+      button: true
     },
     password: {
       value: '',
       type: 'password',
-      required: false
+      required: false,
+      button: true
     }
   })
 
@@ -42,12 +65,12 @@ const SignUp = () => {
       [name]: {
         type: name,
         value: value,
-        required: value.length === 0 ? true : false
+        required: value.length === 0 ? true : false,
+        button: !value.length
       }
     }
-    const updateFormValid = Object.values(updateUser)
-    const testRequired = updateFormValid.filter(el => el.required === true)
-    console.log(testRequired) // se testRequired retornar com length maior que zero entao o botao desabilata caso contrario ele habilita para enviar os dados
+    
+    const testRequired = Object.values(updateUser).filter(el => el.button === true)
     if (testRequired.length === 0) {
       setFormIsValid(true)
     } else {
@@ -56,9 +79,14 @@ const SignUp = () => {
     setUser(updateUser)
   }
 
-  const submitHandle = (e: any) => {
+  const submitHandle = async (e: any) => {
     e.preventDefault()
-    console.log(user.email.value, user.password.value)
+    if (user.email.value) {
+      await signUp(user.email.value, user.password.value)
+      if (logged) {
+        history.goBack()
+      }
+    }
   }
   
   return (
@@ -129,4 +157,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default withRouter(SignUp)

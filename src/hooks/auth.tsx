@@ -4,7 +4,7 @@ import { auth } from '../firebase/firebase.utils'
 interface IAUthContext {
   logged: boolean
   signIn(email: string, password: string): void
-  signUp(displayName: string, name: string, email: string, password: ''): void
+  signUp(email: string, password: string, displayName?: string, name?: string): void
   signOut(): void
 }
 
@@ -24,8 +24,17 @@ const AuthProvider: React.FC = ({ children }) => {
       .catch(error => console.log(error))
   }
 
-  const signUp = () => {
-
+  const signUp = async (email: string, password: string, displayName?: string, name?: string) => {
+    // console.log(email, password)
+    try {
+      const user = await auth.createUserWithEmailAndPassword(email, password)
+      console.log(user)
+      if (user) {
+        setLogged(true)
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   const signOut = () => {
