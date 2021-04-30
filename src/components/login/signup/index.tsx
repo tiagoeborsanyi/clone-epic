@@ -46,7 +46,6 @@ const SignUp = () => {
       }
     }
     const updateFormValid = Object.values(updateUser)
-    // console.log(updateFormValid)
     const testRequired = updateFormValid.filter(el => el.required === true)
     console.log(testRequired) // se testRequired retornar com length maior que zero entao o botao desabilata caso contrario ele habilita para enviar os dados
     if (testRequired.length === 0) {
