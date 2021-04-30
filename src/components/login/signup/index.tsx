@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { SiEpicgames } from 'react-icons/si'
+import { Link } from 'react-router-dom'
 
 import './signup.scss'
 import { Input, Checkbox } from '../../form/input'
@@ -105,7 +106,7 @@ const SignUp = () => {
         <Checkbox>
           Eu li e concordo com termos de serviços.
         </Checkbox>
-        <button className='login-button'>
+        <button className='login-button button-actived'>
           CONTINUAR
         </button>
       </form>
@@ -113,7 +114,7 @@ const SignUp = () => {
         Politica de Privacidade
       </p>
       <span>
-        Possui uma conta da Epic Games? <a href='#'>Entrar</a>
+        Possui uma conta da Epic Games? <Link to='/'>Entrar</Link>
       </span>
     </div>
   )
