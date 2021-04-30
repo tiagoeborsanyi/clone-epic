@@ -24,6 +24,7 @@ type UserState = {
 const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
   const { signUp } = useAuth()
 
+  const [viewPass, setViewPass] = useState(true)
   const [formIsValid, setFormIsValid] = useState(false)
   const [user, setUser] = useState<UserState>({
     firstName: {
@@ -137,6 +138,8 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
           holder='*Senha'
           required={user['password'].required}
           displayInfo
+          passwordViewDisplay
+          passwordView={viewPass}
           handleInputChanged={handleInputChanged}
         />
         <Checkbox>

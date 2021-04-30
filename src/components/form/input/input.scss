@@ -55,7 +55,21 @@
   font-size: 2rem;
   position: absolute;
   top: 1.5rem;
-  right: 2rem;  
+  right: 2rem;
+  color: #757575;
+}
+
+.form-eye {
+  font-size: 1.7rem;
+  position: absolute;
+  top: 1.4rem;
+  right: 5.5rem;
+  color: #757575;
+
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+  }
 }
 
 .form-span {
@@ -70,6 +84,7 @@
 }
 .form-svg:hover {
   cursor: pointer;
+  color: #fff;
 
   & ~ .form-span {
     // opacity: 1;

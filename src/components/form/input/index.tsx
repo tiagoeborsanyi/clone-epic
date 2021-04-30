@@ -1,5 +1,5 @@
 // import { InputHTMLAttributes } from 'react'
-import { AiOutlineInfoCircle } from 'react-icons/ai'
+import { AiOutlineInfoCircle, BsEyeFill, BsEyeSlashFill } from 'react-icons/all'
 import './input.scss'
 
 interface IInputValues {
@@ -10,9 +10,11 @@ interface IInputValues {
   displayInfo?: boolean
   type?: string
   typeContent: string
+  passwordView?: boolean
+  passwordViewDisplay?: boolean
 }
 
-export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, value, holder, displayInfo, type, typeContent }) => (
+export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, value, holder, displayInfo, type, typeContent, passwordView, passwordViewDisplay }) => (
   <div className='signup-form__block'>
     <input
       className='signup-input__text'
@@ -24,6 +26,7 @@ export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, va
       name={type}
     />
     {displayInfo && <AiOutlineInfoCircle className='form-svg' />}
+    {passwordViewDisplay ? (passwordView ? <BsEyeSlashFill className='form-eye' /> : <BsEyeFill className='form-eye' />) : ''}
     <span className='form-span' style={required ? {opacity: '1', display: 'block'} : {}}>necessário</span>
   </div>
 )
