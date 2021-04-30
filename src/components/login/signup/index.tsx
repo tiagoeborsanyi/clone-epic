@@ -6,7 +6,7 @@ import './signup.scss'
 import { Input, Checkbox } from '../../form/input'
 
 const SignUp = () => {
-  // const [formIsValid, setFormIsValid] = useState(false)
+  const [formIsValid, setFormIsValid] = useState(false)
   const [user, setUser] = useState({
     firstName: {
       value: '',
@@ -49,14 +49,24 @@ const SignUp = () => {
     // console.log(updateFormValid)
     const testRequired = updateFormValid.filter(el => el.required === true)
     console.log(testRequired) // se testRequired retornar com length maior que zero entao o botao desabilata caso contrario ele habilita para enviar os dados
+    if (testRequired.length === 0) {
+      setFormIsValid(true)
+    } else {
+      setFormIsValid(false)
+    }
     setUser(updateUser)
+  }
+
+  const submitHandle = (e: any) => {
+    e.preventDefault()
+    console.log(user.email.value, user.password.value)
   }
   
   return (
     <div className='signup'>
       <SiEpicgames />
       <h3 className='signup-title'>cadastrar</h3>
-      <form className='signup-form'>
+      <form className='signup-form' onSubmit={submitHandle}>
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
           <div style={{width: '49%'}}>
             <Input 
@@ -106,7 +116,7 @@ const SignUp = () => {
         <Checkbox>
           Eu li e concordo com termos de serviços.
         </Checkbox>
-        <button className='login-button button-actived'>
+        <button type='submit' className={`login-button ${formIsValid && 'button-actived' }`}>
           CONTINUAR
         </button>
       </form>
