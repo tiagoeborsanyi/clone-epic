@@ -1,5 +1,5 @@
 // import { InputHTMLAttributes } from 'react'
-import { AiOutlineInfoCircle, BsEyeFill, BsEyeSlashFill } from 'react-icons/all'
+import { AiOutlineInfoCircle, BsEyeFill, BsEyeSlashFill, BsCheck } from 'react-icons/all'
 import './input.scss'
 
 interface IInputValues {
@@ -37,7 +37,9 @@ export const Checkbox: React.FC = ({ children }) => (
       className='signup-input__checkbox'
       type='checkbox'
       name='emails'
+      checked
     />
+    <BsCheck className='form-checkbox-tick' />
     <label className='signup-input__checkbox--text'>{children}</label>
   </div>
 )
