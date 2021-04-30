@@ -22,7 +22,7 @@ type UserState = {
 }
 
 const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
-  const { signUp, logged } = useAuth()
+  const { signUp } = useAuth()
 
   const [formIsValid, setFormIsValid] = useState(false)
   const [user, setUser] = useState<UserState>({
@@ -79,13 +79,10 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
     setUser(updateUser)
   }
 
-  const submitHandle = async (e: any) => {
+  const submitHandle = (e: any) => {
     e.preventDefault()
     if (user.email.value) {
-      await signUp(user.email.value, user.password.value)
-      if (logged) {
-        history.goBack()
-      }
+      signUp(user.email.value, user.password.value, history)
     }
   }
   
