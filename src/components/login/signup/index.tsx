@@ -83,7 +83,7 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
   const submitHandle = (e: any) => {
     e.preventDefault()
     if (user.email.value) {
-      signUp(user.email.value, user.password.value, history)
+      signUp(user.email.value, user.password.value, history, user.displayName.value, user.firstName.value)
     }
   }
   

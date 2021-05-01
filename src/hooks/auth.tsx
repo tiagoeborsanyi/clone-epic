@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext } from 'react'
-import { auth } from '../firebase/firebase.utils'
+import { auth, createUserProfileDocument } from '../firebase/firebase.utils'
 
 interface IAUthContext {
   logged: boolean
@@ -28,8 +28,9 @@ const AuthProvider: React.FC = ({ children }) => {
     
     try {
       const user = await auth.createUserWithEmailAndPassword(email, password)
-      console.log(user)
+      // console.log(user)
       if (user) {
+        await createUserProfileDocument(user.user, { displayName, name })
         setLogged(true)
         history.goBack()
       }

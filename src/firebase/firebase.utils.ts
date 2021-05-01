@@ -20,6 +20,7 @@ export const createUserProfileDocument = async (userAuth: any, additionalData: a
 
   if (!snapshopt.exists) {
     const { displayName, email } = userAuth
+    // console.log(userAuth, additionalData)
     const createdAt = new Date()
 
     try {
