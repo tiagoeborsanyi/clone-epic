@@ -8,7 +8,7 @@ import './header.scss'
 
 const Header = () => {
   const { logged, displayName } = useAuth()
-  console.log(logged)
+  console.log(logged, displayName)
 
   return (
     <div className='header'>

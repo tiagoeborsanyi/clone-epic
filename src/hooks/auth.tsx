@@ -5,7 +5,7 @@ interface IAUthContext {
   logged: boolean
   displayName: string
   signIn(email: string, password: string): void
-  signUp(email: string, password: string, history?: any, displayNameParam?: string, name?: string): void
+  signUp(email: string, password: string, history: any, displayNameParam: string, name?: string): void
   signOut(): void
 }
 
@@ -26,15 +26,15 @@ const AuthProvider: React.FC = ({ children }) => {
       .catch(error => console.log(error))
   }
 
-  const signUp = async (email: string, password: string, history?: any, displayNameParam?: string, name?: string) => {
+  const signUp = async (email: string, password: string, history: any, displayNameParam: string, name?: string) => {
     
     try {
       const user = await auth.createUserWithEmailAndPassword(email, password)
       // console.log(user)
       if (user) {
-        await createUserProfileDocument(user.user, { displayNameParam, name })
+        await createUserProfileDocument(user.user, { displayName: displayNameParam, name })
         setLogged(true)
-        setDisplayName(displayName)
+        setDisplayName(displayNameParam)
         history.goBack()
       }
     } catch (error) {
