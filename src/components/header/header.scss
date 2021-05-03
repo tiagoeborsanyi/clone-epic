@@ -23,7 +23,7 @@
 
   &__nav {
     display: grid;
-    grid-template-columns: repeat(3, minmax(min-content, max-content));
+    grid-template-columns: repeat(4, minmax(min-content, max-content));
     grid-column-gap: 2rem;
     align-items: center;
   }

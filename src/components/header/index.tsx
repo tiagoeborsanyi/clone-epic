@@ -17,6 +17,7 @@ const Header = () => {
         <Link to="/" className="nav-link selected-link">
         <span>store</span>
         </Link>
+        {logged && <Link to='/' className="nav-link"><span>Biblioteca</span></Link>}
         <Link to="/" className="nav-link"><span>perguntas frequentes</span></Link>
         <Link to="/" className="nav-link"><span>ajuda</span></Link>
       </nav>
