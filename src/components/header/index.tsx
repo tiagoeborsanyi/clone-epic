@@ -28,7 +28,7 @@ const Header = () => {
             <IoIosPerson />
             entrar
           </Link> :
-          <div>
+          <div className='menu__user-name'>
             {displayName}
           </div>
         }
