@@ -87,7 +87,34 @@
    }
 
    &__user-name {
-     
+     height: 100%;
+     width: 5rem;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1.5rem;
+     position: relative;
+
+     & > button {
+       background: transparent;
+       border: none;
+       outline: none;
+       color: #fff;
+
+       &:hover {
+        cursor: pointer;
+        color: $buttom-color;
+       }
+     }
+
+     &--dropdown {
+       height: 20rem;
+       width: 22rem;
+       background: #fff;
+       position: absolute;
+       top: 6rem;
+       left: -15rem;
+     }
    }
 
    &__buttom {

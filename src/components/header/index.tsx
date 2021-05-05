@@ -17,19 +17,24 @@ const Header = () => {
         <Link to="/" className="nav-link selected-link">
         <span>store</span>
         </Link>
-        {logged && <Link to='/' className="nav-link"><span>Biblioteca</span></Link>}
+        {!logged && <Link to='/' className="nav-link"><span>Biblioteca</span></Link>}
         <Link to="/" className="nav-link"><span>perguntas frequentes</span></Link>
         <Link to="/" className="nav-link"><span>ajuda</span></Link>
       </nav>
       <div className="menu">
         <IoIosGlobe />
-        { !logged ?
+        { logged ?
           <Link to="/login" className="menu__link">
             <IoIosPerson />
             entrar
           </Link> :
           <div className='menu__user-name'>
-            {displayName}
+            <button>
+              {displayName}Tiago
+            </button>
+            <div className='menu__user-name--dropdown'>
+
+            </div>
           </div>
         }
         <button className="menu__buttom">baixar epic games</button>
