@@ -1,7 +1,10 @@
+import { useState } from 'react'
+
 import './login.scss'
 
 import SignUp from '../../components/login/signup'
-import { useState } from 'react'
+import SignIn from '../../components/login/signin'
+
 
 const Login: React.FC = () => {
   const [rotate, setRotate] = useState<boolean>(false)
@@ -14,10 +17,7 @@ const Login: React.FC = () => {
           <SignUp rotateCard={() => setRotate(!rotate)} />
         </div>
         <div className='login__side login__side--back' style={rotate ? {transform: 'rotateY(0)'} : {}}>
-          <div>
-            algumas coisas escritas
-            <button onClick={() => setRotate(!rotate)}>Cadastrar</button>
-          </div>
+          <SignIn rotateCard={() => setRotate(!rotate)} />
         </div>
       </div>
     </section>
