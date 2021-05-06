@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   margin-bottom: 1.6rem;
+  z-index: 10;
 
   &--checkbox {
     margin-top: 2rem;
@@ -34,13 +35,13 @@
     display: table;
     height: 2.1rem;
     width: 2.1rem;
-    background: rgb(69, 69, 69);
+    background: rgba(69, 69, 69, .5);
     border: none;
     appearance: none;
     margin-right: 2rem;
 
     &:checked {
-      background: rgb(69, 69, 69);
+      background: rgba(69, 69, 69, .5);
     }
 
     &--text {
@@ -56,6 +57,7 @@
   left: .4rem;
   top: .4rem;
   font-size: 1.3rem;
+  z-index: -10;
 }
 
 .form-svg {

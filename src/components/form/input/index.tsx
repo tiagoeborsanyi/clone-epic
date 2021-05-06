@@ -1,4 +1,5 @@
 // import { InputHTMLAttributes } from 'react'
+import React from 'react'
 import { AiOutlineInfoCircle, BsEyeFill, BsEyeSlashFill, BsCheck } from 'react-icons/all'
 import './input.scss'
 
@@ -12,9 +13,21 @@ interface IInputValues {
   typeContent: string
   passwordView?: boolean
   passwordViewDisplay?: boolean
+  changePassView?: (event: any) => void
 }
 
-export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, value, holder, displayInfo, type, typeContent, passwordView, passwordViewDisplay }) => (
+export const Input: React.FC<IInputValues> = ({
+  required, 
+  handleInputChanged, 
+  value, 
+  holder, 
+  displayInfo, 
+  type, 
+  typeContent, 
+  passwordView, 
+  passwordViewDisplay,
+  changePassView 
+}) => (
   <div className='signup-form__block'>
     <input
       className='signup-input__text'
@@ -26,20 +39,26 @@ export const Input: React.FC<IInputValues> = ({ required, handleInputChanged, va
       name={type}
     />
     {displayInfo && <AiOutlineInfoCircle className='form-svg' />}
-    {passwordViewDisplay ? (passwordView ? <BsEyeSlashFill className='form-eye' /> : <BsEyeFill className='form-eye' />) : ''}
+    {passwordViewDisplay ? (passwordView ? <BsEyeSlashFill className='form-eye' onClick={changePassView} /> : <BsEyeFill className='form-eye' onClick={changePassView} />) : ''}
     <span className='form-span' style={required ? {opacity: '1', display: 'block'} : {}}>necessário</span>
   </div>
 )
 
-export const Checkbox: React.FC = ({ children }) => (
+interface ICheckProps {
+  changecheck: (event: React.FormEvent<HTMLInputElement>) => void
+  check: boolean
+}
+
+export const Checkbox: React.FC<ICheckProps> = ({ children, check, changecheck }) => (
   <div className='signup-form__block signup-form__block--checkbox'>
     <input
       className='signup-input__checkbox'
       type='checkbox'
       name='emails'
-      checked
+      checked={check}
+      onChange={changecheck}
     />
-    <BsCheck className='form-checkbox-tick' />
+    {check && <BsCheck className='form-checkbox-tick' />}
     <label className='signup-input__checkbox--text'>{children}</label>
   </div>
 )

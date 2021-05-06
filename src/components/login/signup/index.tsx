@@ -23,7 +23,7 @@ type UserState = {
 
 const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
   const { signUp } = useAuth()
-
+  const [checkNoticies,setCheckNoticies] = useState<boolean>(false)
   const [viewPass, setViewPass] = useState(true)
   const [formIsValid, setFormIsValid] = useState(false)
   const [user, setUser] = useState<UserState>({
@@ -132,7 +132,7 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
           handleInputChanged={handleInputChanged}
         />
         <Input
-          typeContent='password'
+          typeContent={viewPass ? 'password' : 'text'}
           value={user['password'].value}
           type={user['password'].type}
           holder='*Senha'
@@ -140,12 +140,13 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
           displayInfo
           passwordViewDisplay
           passwordView={viewPass}
+          changePassView={() => setViewPass(!viewPass)}
           handleInputChanged={handleInputChanged}
         />
-        <Checkbox>
+        <Checkbox check={checkNoticies} changecheck={() => setCheckNoticies(!checkNoticies)}>
           Quero receber notícias, pesquisas e ofertas especiais da Epic Games.
         </Checkbox>
-        <Checkbox>
+        <Checkbox check={checkNoticies} changecheck={() => setCheckNoticies(!checkNoticies)}>
           Eu li e concordo com termos de serviços.
         </Checkbox>
         <button type='submit' className={`login-button ${formIsValid && 'button-actived' }`}>
