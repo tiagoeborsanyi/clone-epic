@@ -160,7 +160,7 @@ const SignUp: React.FC<ISignUpProps> = ({ history, rotateCard }) => {
         Politica de Privacidade
       </p>
       <span>
-        Possui uma conta da Epic Games? <button onClick={rotateCard}>Entrar</button>
+        Possui uma conta da Epic Games? <button className='button-for-signin' onClick={rotateCard}>Entrar</button>
       </span>
     </div>
   )

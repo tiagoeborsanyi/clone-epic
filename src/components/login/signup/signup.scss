@@ -32,6 +32,18 @@
   }
 }
 
+.button-for-signin {
+  color: rgb(86, 86, 86);
+  background: transparent;
+  border: none;
+  margin-left: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    color: #fff;
+  }
+}
+
 .signup-title {
   margin-top: 3rem;
   font-size: 1.3rem;
