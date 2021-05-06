@@ -15,7 +15,9 @@ const AuthProvider: React.FC = ({ children }) => {
   const [logged, setLogged] = useState<boolean>(() => {
     return !!localStorage.getItem('@clone-epic:logged')
   })
-  const [displayName, setDisplayName] = useState<string>('')
+  const [displayName, setDisplayName] = useState<string>(() => {
+    return localStorage.getItem('@clone-epic:name') || ''
+  })
 
   const signIn = (email: string, password: string) => {
     auth.signInWithEmailAndPassword(email, password)
@@ -38,6 +40,7 @@ const AuthProvider: React.FC = ({ children }) => {
         await createUserProfileDocument(user.user, { displayName: displayNameParam, name })
         setLogged(true)
         localStorage.setItem('@clone-epic:logged', 'true');
+        localStorage.setItem('@clone-epic:name', displayNameParam)
         setDisplayName(displayNameParam)
         history.goBack()
       }
@@ -48,7 +51,8 @@ const AuthProvider: React.FC = ({ children }) => {
 
   const signOut = () => {
     setLogged(false)
-    localStorage.removeItem('@minha-carteira:logged');
+    localStorage.removeItem('@clone-epic:logged');
+    localStorage.removeItem('@clone-epic:name')
   }
 
   return (
