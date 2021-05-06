@@ -144,6 +144,10 @@
   top: -16rem;
   right: 12rem;
   transition: all .5s ease-in-out;
+
+  &:hover {
+    top: 0;
+  }
 }
 
 .menu__buttom:hover + .menu__user-name--dropdown {
