@@ -1,0 +1,31 @@
+@mixin login {
+  height: auto;
+  max-height: 80rem;
+  width: 48rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #202020;
+  padding: 5rem 6rem 2rem 6rem;
+
+  & > svg {
+    font-size: 5rem;
+    align-self: center;
+  }
+
+  & > p {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  & > span {
+    text-align: center;
+    margin: 3rem 0;
+    color: rgb(163, 162, 162);
+    font-size: 1.3rem;
+
+    & > a {
+      margin-left: 1rem;
+    }
+  }
+}

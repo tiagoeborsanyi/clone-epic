@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
+import { SiEpicgames } from 'react-icons/si'
 
 import './signin.scss'
 
@@ -9,9 +10,15 @@ interface ISignUpProps extends RouteComponentProps {
 
 const SignIn: React.FC<ISignUpProps> = ({ rotateCard }) => {
   return (
-    <div>
-      algumas coisas escritas
-      <button onClick={rotateCard}>Cadastrar</button>
+    <div className='signin'>
+      <SiEpicgames />
+      inputys
+      <p>
+        Politica de Privacidade
+      </p>
+      <span>
+        Não possui uma conta da Epic Games? <button className='button-for-signin' onClick={rotateCard}>Cadastrar</button>
+      </span>
     </div>
   )
 }
