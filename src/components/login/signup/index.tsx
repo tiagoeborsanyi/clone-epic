@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { SiEpicgames } from 'react-icons/si'
-import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
+import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 import './signup.scss'
 import { useAuth } from '../../../hooks/auth'
@@ -20,8 +20,11 @@ type UserState = {
   password: propsTypesStates
 
 }
+interface ISignUpProps extends RouteComponentProps {
+  rotateCard?: (event: any) => void
+}
 
-const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
+const SignUp: React.FC<ISignUpProps> = ({ history, rotateCard }) => {
   const { signUp } = useAuth()
   const [checkNoticies,setCheckNoticies] = useState<boolean>(false)
   const [viewPass, setViewPass] = useState(true)
@@ -157,7 +160,7 @@ const SignUp: React.FC<RouteComponentProps> = ({ history }) => {
         Politica de Privacidade
       </p>
       <span>
-        Possui uma conta da Epic Games? <Link to='/'>Entrar</Link>
+        Possui uma conta da Epic Games? <button onClick={rotateCard}>Entrar</button>
       </span>
     </div>
   )
