@@ -12,7 +12,9 @@ interface IAUthContext {
 const AuthContext = createContext<IAUthContext>({} as IAUthContext)
 
 const AuthProvider: React.FC = ({ children }) => {
-  const [logged, setLogged] = useState(false)
+  const [logged, setLogged] = useState<boolean>(() => {
+    return !!localStorage.getItem('@clone-epic:logged')
+  })
   const [displayName, setDisplayName] = useState<string>('')
 
   const signIn = (email: string, password: string) => {
@@ -21,6 +23,7 @@ const AuthProvider: React.FC = ({ children }) => {
         const user = userCredential.user
         if (user) {
           setLogged(true)
+          localStorage.setItem('@clone-epic:logged', 'true');
         }
       })
       .catch(error => console.log(error))
@@ -34,6 +37,7 @@ const AuthProvider: React.FC = ({ children }) => {
       if (user) {
         await createUserProfileDocument(user.user, { displayName: displayNameParam, name })
         setLogged(true)
+        localStorage.setItem('@clone-epic:logged', 'true');
         setDisplayName(displayNameParam)
         history.goBack()
       }
@@ -44,6 +48,7 @@ const AuthProvider: React.FC = ({ children }) => {
 
   const signOut = () => {
     setLogged(false)
+    localStorage.removeItem('@minha-carteira:logged');
   }
 
   return (
