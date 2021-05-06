@@ -49,8 +49,29 @@ const Header = () => {
           <button className="menu__buttom">baixar epic games</button>
         </div>
       </div>
-      <div className='menu__user-name--dropdown' style={f ? {top: '0'} : {}}>
-
+      <div className='menu__user-name--dropdown' style={true ? {top: '6rem'} : {}}>
+          <ul className='menu-dropdown__list'>
+            <li className='menu-dropdown__item'>
+              <Link to='/'>
+                Tiago
+              </Link>
+            </li>
+            <li className='menu-dropdown__item'>
+              <Link to='/'>
+                Favoritos
+              </Link>
+            </li>
+            <li className='menu-dropdown__item'>
+              <Link to='/'>
+                Configuracoes
+              </Link>
+            </li>
+            <li className='menu-dropdown__item'>
+              <Link to='/'>
+                Sair
+              </Link>
+            </li>
+          </ul>
       </div>
     </div>
   )
