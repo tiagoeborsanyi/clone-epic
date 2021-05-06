@@ -93,7 +93,6 @@
      align-items: center;
      justify-content: center;
      font-size: 1.5rem;
-     position: relative;
 
      & > button {
        background: transparent;
@@ -105,15 +104,6 @@
         cursor: pointer;
         color: $buttom-color;
        }
-     }
-
-     &--dropdown {
-       height: 20rem;
-       width: 22rem;
-       background: #fff;
-       position: absolute;
-       top: 6rem;
-       left: -15rem;
      }
    }
 
@@ -138,4 +128,24 @@
     cursor: pointer;
     color: #fff;
    }
+}
+
+.header-up {
+  grid-column: 1 / -1;
+  position: relative;
+
+}
+
+.menu__user-name--dropdown {
+  height: 20rem;
+  width: 22rem;
+  background: #fff;
+  position: absolute;
+  top: -16rem;
+  right: 12rem;
+  transition: all .5s ease-in-out;
+}
+
+.menu__buttom:hover + .menu__user-name--dropdown {
+  top: 0;
 }
