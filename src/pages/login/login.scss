@@ -1,5 +1,40 @@
-.login {
+.login-section {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.login {
+  height: 80rem;
+  width: 48rem;
+  perspective: 150rem;
+
+  @media (max-height: 900px) {
+      margin-top: 6rem;
+  }
+
+  &__side {
+    height: 80rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: all .8s ease;
+
+    &--back {
+      transform: rotateY(180deg);
+      background-color: #202020;
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+      transform: rotateY(0);
+  }
 }
