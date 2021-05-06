@@ -8,7 +8,7 @@ import './header.scss'
 import { useState } from 'react'
 
 const Header = () => {
-  const { logged, displayName } = useAuth()
+  const { logged, signOut, displayName } = useAuth()
   console.log(logged, displayName)
   const [f, setF] = useState(false)
 
@@ -30,7 +30,7 @@ const Header = () => {
         </nav>
         <div className="menu">
           <IoIosGlobe />
-          { logged ?
+          { !logged ?
             <Link to="/login" className="menu__link">
               <IoIosPerson />
               entrar
@@ -42,14 +42,17 @@ const Header = () => {
               <button
                 onMouseOver={handleFocus}
                 onMouseLeave={() => setF(true)}>
-                {displayName}Tiago
+                {displayName}
               </button>
             </div>
           }
           <button className="menu__buttom">baixar epic games</button>
         </div>
       </div>
-      <div className='menu__user-name--dropdown' style={true ? {top: '6rem'} : {}}>
+      <div
+        className={`menu__user-name--dropdown ${logged && 'menu__user-name--dropdown-hover'}`}
+        style={f && logged ? {top: '6rem'} : {}}
+      >
           <ul className='menu-dropdown__list'>
             <li className='menu-dropdown__item'>
               <Link to='/'>
@@ -67,9 +70,9 @@ const Header = () => {
               </Link>
             </li>
             <li className='menu-dropdown__item'>
-              <Link to='/'>
+              <button onClick={signOut}>
                 Sair
-              </Link>
+              </button>
             </li>
           </ul>
       </div>
