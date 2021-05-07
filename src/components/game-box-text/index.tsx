@@ -3,6 +3,7 @@ import { BsBoxArrowInUpRight } from 'react-icons/bs'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 import './game-box-text.scss'
+import { ButtonGame } from './button'
 
 interface GameProps extends RouteComponentProps {
   game: any
@@ -19,7 +20,7 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history }) => {
 
   const handleToCart = () => {
     if (logged) {
-      alert('authenticado')
+      console.log('authenticado')
     } else {
       history.push('/login')
     }
@@ -41,9 +42,9 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history }) => {
             <span>R$ {game ? game.newValue : ''}</span>
           </div>
           <div className='game-box-text-description-content__button'>
-            <button onClick={handleToCart}>
-              compre agora
-            </button>
+            <ButtonGame handleToCart={handleToCart}>
+              COMPRE AGORA
+            </ButtonGame>
           </div>
         </div>
       </div>

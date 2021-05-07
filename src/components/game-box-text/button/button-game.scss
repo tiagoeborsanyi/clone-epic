@@ -1,0 +1,22 @@
+@import '../../../index.scss';
+
+.button-game {
+  height: 5.3rem;
+  width: 77%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  background-color: $button-green;
+  color: #fff;
+  padding-right: 15%;
+  position: relative;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(25, 128, 25);
+  }
+}

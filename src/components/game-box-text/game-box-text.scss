@@ -65,40 +65,6 @@
   &__button {
     grid-row: 2 / -1;
     grid-column: 2 / 3;
-
-    & > button {
-      height: 5.3rem;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 5px;
-      border: none;
-      background-color: $button-green;
-      color: #fff;
-      padding-right: 15%;
-      position: relative;
-      font-weight: 500;
-      text-transform: uppercase;
-
-      &::after {
-        content: '+';
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 22%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-left: 1px solid black;
-      }
-
-      &:hover {
-        cursor: pointer;
-        background-color: rgb(25, 128, 25);
-      }
-    }
   }
 }
 
