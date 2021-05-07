@@ -4,7 +4,7 @@ import { auth, createUserProfileDocument } from '../firebase/firebase.utils'
 interface IAUthContext {
   logged: boolean
   displayName: string
-  signIn(email: string, password: string): void
+  signIn(email: string, password: string, history: any): void
   signUp(email: string, password: string, history: any, displayNameParam: string, name?: string): void
   signOut(): void
 }
@@ -19,13 +19,17 @@ const AuthProvider: React.FC = ({ children }) => {
     return localStorage.getItem('@clone-epic:name') || ''
   })
 
-  const signIn = (email: string, password: string) => {
+  const signIn = (email: string, password: string, history: any) => {
     auth.signInWithEmailAndPassword(email, password)
       .then(userCredential => {
         const user = userCredential.user
         if (user) {
+          console.log(user)
           setLogged(true)
+          setDisplayName(email.split('@')[0])
           localStorage.setItem('@clone-epic:logged', 'true');
+          localStorage.setItem('@clone-epic:name', email.split('@')[0])
+          history.goBack()
         }
       })
       .catch(error => console.log(error))

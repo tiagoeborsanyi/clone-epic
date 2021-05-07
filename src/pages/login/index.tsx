@@ -8,7 +8,7 @@ import SignIn from '../../components/login/signin'
 
 const Login: React.FC = () => {
   const [rotate, setRotate] = useState<boolean>(false)
-  console.log(rotate)
+  // console.log(rotate)
 
   return (
       <section className='login-section'>

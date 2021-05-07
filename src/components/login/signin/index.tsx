@@ -3,6 +3,7 @@ import { withRouter, RouteComponentProps } from 'react-router-dom'
 import { SiEpicgames } from 'react-icons/si'
 
 import './signin.scss'
+import { useAuth } from '../../../hooks/auth'
 import { Input } from '../../form/input'
 
 type propsTypesStates = {
@@ -21,7 +22,8 @@ interface ISignUpProps extends RouteComponentProps {
   rotateCard?: (event: any) => void
 }
 
-const SignIn: React.FC<ISignUpProps> = ({ rotateCard }) => {
+const SignIn: React.FC<ISignUpProps> = ({ history, rotateCard }) => {
+  const { signIn }  = useAuth()
   const [viewPass, setViewPass] = useState(true)
   const [formIsValid, setFormIsValid] = useState(false)
   const [user, setUser] = useState<UserState>({
@@ -61,8 +63,8 @@ const SignIn: React.FC<ISignUpProps> = ({ rotateCard }) => {
 
   const submitHandle = (e: any) => {
     e.preventDefault()
-    if (user.email.value) {
-      
+    if (user.email.value && user.password.value) {
+      signIn(user.email.value, user.password.value, history)
     }
   }
 
