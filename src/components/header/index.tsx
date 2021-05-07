@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { useAuth } from '../../hooks/auth'
-import Logo from '../../assets/logo.png'
-import { IoIosGlobe, IoIosPerson, IoCartOutline } from 'react-icons/all'
+import { IoIosGlobe, IoIosPerson, SiEpicgames } from 'react-icons/all'
 
 import './header.scss'
 import { useState } from 'react'
@@ -18,7 +17,7 @@ const Header = () => {
   return (
     <div className='header-up'>
       <div className='header'>
-        <img src={Logo} alt="Logo" className="header__logo"/>
+        <SiEpicgames className="header__logo" />
         <nav className="header__nav">
           <Link to="/" className="nav-link selected-link">
           <span>store</span>
@@ -43,11 +42,6 @@ const Header = () => {
                 onMouseLeave={() => setF(true)}>
                 {displayName}
               </button>
-            </div>
-          }
-          { logged && 
-            <div className='menu__user-cart'>
-              <button><IoCartOutline /></button>
             </div>
           }
           <button className="menu__buttom">baixar epic games</button>
