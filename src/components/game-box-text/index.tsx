@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { BsBoxArrowInUpRight } from 'react-icons/bs'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
+import firebase from 'firebase/app'
 
 import './game-box-text.scss'
+import { firestore } from '../../firebase/firebase.utils'
 import { ButtonGame, ButtonGameFavorites } from './button'
+// import { RiCollageLine } from 'react-icons/ri'
 
 interface GameProps extends RouteComponentProps {
   game: any
@@ -26,9 +29,17 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history }) => {
     }
   }
 
-  const handleFavorited = () => {
+  const handleFavorited = async () => {
     if (logged) {
-      console.log(game)
+      // console.log(game)
+      try {
+        const collection = await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
+          favorites: firebase.firestore.FieldValue.arrayUnion(game)
+        })
+        console.log(collection)
+      } catch (error) {
+        console.log(error)
+      }
     } else {
       history.push('/login')
     }
