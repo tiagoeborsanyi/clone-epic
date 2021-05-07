@@ -4,6 +4,7 @@ import { useAuth } from '../../hooks/auth'
 import { dataItems } from '../../dataItems'
 import GameCarousel from '../../components/game-carousel'
 import GameBoxText from '../../components/game-box-text'
+import Modal from '../../components/modal'
 
 interface GameProps {
   id: string
@@ -29,6 +30,8 @@ interface IGamePageProps {
 const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
   const { logged } = useAuth()
   const [game, setGame] = useState<GameProps | undefined>()
+  const [show, setShow] = useState<boolean>(false)
+  console.log(show)
 
   useEffect(() => {
     const filterData = dataItems.filter(item => item.id === match.params.id)
@@ -39,8 +42,12 @@ const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
   }, [match.params.id, history])
   
   return (
-    <div>
+    <div className='game-page'>
+      <Modal show={show} modalClosed={() => setShow(!show)}>
+        <button onClick={() => setShow(!show)}>closed</button>
+      </Modal>
       <GameCarousel imagePageGame={game ? game['imagePageGame'] : ''} />
+      <button onClick={() => setShow(!show)}>closed</button>
       <GameBoxText game={game} logged={logged} />
     </div>
   )
