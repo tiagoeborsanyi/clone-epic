@@ -20,7 +20,15 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history }) => {
 
   const handleToCart = () => {
     if (logged) {
-      console.log('authenticado')
+      console.log(game)
+    } else {
+      history.push('/login')
+    }
+  }
+
+  const handleFavorited = () => {
+    if (logged) {
+      console.log(game)
     } else {
       history.push('/login')
     }
@@ -45,7 +53,7 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history }) => {
             <ButtonGame handleToCart={handleToCart}>
               COMPRE AGORA
             </ButtonGame>
-            <ButtonGameFavorites />
+            <ButtonGameFavorites handleFavorited={handleFavorited} />
           </div>
         </div>
       </div>

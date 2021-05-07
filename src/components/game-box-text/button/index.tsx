@@ -15,9 +15,13 @@ export const ButtonGame: React.FC<IButtonGameProps> = ({ children, handleToCart 
   )
 }
 
-export const ButtonGameFavorites: React.FC = () => {
+interface IButtonGameFavoritesProps {
+  handleFavorited: () => void
+}
+
+export const ButtonGameFavorites: React.FC<IButtonGameFavoritesProps> = ({ handleFavorited }) => {
   return (
-    <button className='button-game game-favorites'>
+    <button className='button-game game-favorites' onClick={handleFavorited}>
       <GoPlus />
     </button>
   )
