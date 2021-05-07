@@ -64,7 +64,7 @@
 
 .menu {
   display: grid;
-  grid-template-columns: repeat(3, minmax(min-content, max-content));
+  grid-template-columns: repeat(4, minmax(min-content, max-content));
   grid-column-gap: 2rem;
   align-items: center;
   justify-content: end;
@@ -106,6 +106,25 @@
        }
      }
    }
+
+   &__user-cart {
+    height: 100%;
+    width: 5rem;
+    display: grid;
+
+    & > button {
+      align-self: center;
+      background-color: transparent;
+      border: none;
+      font-size: 2rem;
+      color: #fff;
+
+      &:hover {
+        cursor: pointer;
+        color: $buttom-color;
+       }
+    }
+  }
 
    &__buttom {
     height: 100%;
