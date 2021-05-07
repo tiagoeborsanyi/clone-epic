@@ -12,7 +12,7 @@ const Modal: React.FC<IModalProps> = ({ children, show, modalClosed }) => {
       <div 
         className='modal'
         style={{
-          transform: show ? '' : 'translateY(-100vh)',
+          transform: show ? 'translateY(8vh)' : 'translateY(-100vh)',
           opacity: show ? '1' : '0'
         }}
       >
