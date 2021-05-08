@@ -2,6 +2,9 @@ import { BsInfoCircle, BsX } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 import './modal.scss'
+import Card from '../../assets/credit_card.png'
+import Flash from '../../assets/flash.png'
+import Paypal from '../../assets/paypal.png'
 
 interface IModalProps {
   show?: boolean
@@ -34,7 +37,37 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
           </div>
           <div className='conteudo-pages'>
             <div className='conteudo-metodo'>
-              fghsfdfhdsf
+              <h3 className='conteudo-metodo__title'>escolher um método de pagamento</h3>
+              <form className='conteudo-form'>
+                <div className='conteudo-form__block'>
+                  <input type="radio" name='card' />
+                  <label htmlFor='card' className='conteudo-form__block--label'>
+                    <img src={Card} alt='card1' />
+                    <span>Credit Card</span>
+                  </label>
+                </div>
+                <div className='conteudo-form__block'>
+                  <input type="radio" name='card' />
+                  <label htmlFor='card' className='conteudo-form__block--label'>
+                    <img src={Flash} alt='card1' />
+                    <span>Boleto Flash</span>  
+                  </label>
+                </div>
+                <div className='conteudo-form__block'>
+                  <input type="radio" name='card' />
+                  <label htmlFor='card' className='conteudo-form__block--label'>
+                    <img src={Paypal} alt='card1' />
+                    <span>PayPal</span>
+                  </label>
+                </div>
+                <div className='conteudo-form__block'>
+                  <input type="radio" name='card' />
+                  <label htmlFor='card' className='conteudo-form__block--label'>
+                    <img src={Card} alt='card1' />
+                    <span>Banco Itau</span>
+                  </label>
+                </div>
+              </form>
             </div>
 
             <div className='conteudo-finaliza'>
