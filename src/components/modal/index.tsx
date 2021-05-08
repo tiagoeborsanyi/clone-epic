@@ -19,7 +19,22 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
           opacity: show ? '1' : '0'
         }}
       >
-        <div className='modal-conteudo'></div>
+        <div className='modal-conteudo'>
+          <div className='conteudo-header'>
+            <div className='conteudo-header__same conteudo-header__metodo conteudo-header__checked'>
+              <button>
+                método de pagemto
+              </button>
+            </div>
+            <div className='conteudo-header__same conteudo-header__finaliza'>
+              <button>
+                finaliza compra
+              </button>
+            </div>
+          </div>
+        </div>
+
+
         <div className='modal-resumo'>
           <div className='resume-title'>
             <h3>resumo do pedido</h3>

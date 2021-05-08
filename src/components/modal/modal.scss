@@ -43,6 +43,51 @@
   }
 }
 
+.conteudo-header {
+  height: 7.7rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  &__same {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    border-bottom: .1rem solid $buttom-color;
+    padding-bottom: .5rem;
+    cursor: pointer;
+
+    & > button {
+      background-color: transparent;
+      border: none;
+      color: #ccc;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      font-weight: 300;
+      opacity: .5;
+    }
+  }
+
+  &__checked {
+    border-bottom: .6rem solid $buttom-background;
+    padding-bottom: 0;
+    & > button {
+      color: #fff;
+      font-weight: 400;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
 .modal-resumo {
   height: 100%;
   grid-column: 2 / -1;
