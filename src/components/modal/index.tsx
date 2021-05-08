@@ -12,7 +12,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
       <div 
         className='modal'
         style={{
-          transform: show ? 'translateY(8vh)' : 'translateY(-100vh)',
+          transform: show ? 'translate(-50%, 5vh)' : 'translateY(-100vh)',
           opacity: show ? '1' : '0'
         }}
       >
@@ -32,7 +32,9 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
           <div className='resumo__titulo'>resumo pedido</div>
           <div className='resumo__conteudo'>
             <div className='resumo__conteudo--image' style={{backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/assassins-creed-valhala.webp?alt=media)`}}></div>
-            conteudo
+            <div className='resumo__conteudo--texto'>
+              conteud de texto
+            </div>
           </div>
       </div>
     </>

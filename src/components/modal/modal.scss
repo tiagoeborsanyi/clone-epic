@@ -12,12 +12,13 @@
 }
 
 .modal {
-  height: 80vh;
-  width: 80vw;
-  min-width: 1150px;
-  max-width: 130rem;
+  height: auto;
+  width: 70vw;
+  min-width: 1000px;
+  max-width: 1150px;
   background-color: #2b2a2a;
   position: absolute;
+  left: 50%;
   transition: all 0.4s ease-out;
   z-index: 100;
 
@@ -77,10 +78,15 @@
     grid-row: 2 / -1;
 
     &--image {
-      height: 40rem;
+      height: 25rem;
       width: 100%;
       background-position: center;
       background-size: cover;
+    }
+
+    &--texto {
+      height: 30rem;
+      width: 100%;
     }
   }
 }
