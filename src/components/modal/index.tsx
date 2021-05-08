@@ -24,8 +24,8 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
           <div className='resume-content'>
             <div className='resume-content__image' style={{backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/snow-runner.webp?alt=media)'}}></div>
             <div className='resume-content__values'>
-              <h4>Skat City</h4>
-              <h5>Por Snowman</h5>
+              <h4 className='resume-content__values--title'>Skat City</h4>
+              <h5 className='resume-content__values--subtitle'>Por Snowman</h5>
               <ul className='resume-content__items'>
                 <li className='resume-content__item'>
                   <p>Preço listado</p>

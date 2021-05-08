@@ -78,6 +78,21 @@
 
   &__values {
     margin: 0 8px;
+    color: $buttom-color;
+
+    &--title {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-top: 1.5rem;
+      color: inherit;
+    }
+
+    &--subtitle {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: inherit;
+    }
   }
 
   &__items {
