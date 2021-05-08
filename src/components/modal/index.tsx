@@ -29,29 +29,29 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
               <ul className='resume-content__items'>
                 <li className='resume-content__item'>
                   <p>Preço listado</p>
-                  <span>R$ 28,99</span>
+                  <span className='resume-oldvalue'>R$ 28,99</span>
                 </li>
                 <li className='resume-content__item'>
                   <p>Desconto</p>
-                  <span>- R$ 9,86</span>
+                  <span className='resume-descount'>- R$ 9,86</span>
                 </li>
                 <li className='resume-content__item'>
                   <p>Preço</p>
                   <span>R$ 19,13</span>
                 </li>
               </ul>
-              <div></div>
+              <div className='resume-content__line'></div>
               <ul className='resume-content__items'>
                 <li className='resume-content__item'>
                   <p>Total</p>
                   <span>R$ 19,13</span>
                 </li>
                 <li className='resume-content__item'>
-                  <p>Você gasta</p>
+                  <p className='resume-totalvalue'>Você gasta</p>
                   <span>R$ 19,13</span>
                 </li>
               </ul>
-              <div></div>
+              <div className='resume-content__line'></div>
 
             </div>
           </div>
