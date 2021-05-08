@@ -75,6 +75,19 @@
     background-position: center;
     background-size: cover;
   }
+
+  &__values {
+    margin: 0 8px;
+  }
+
+  &__items {
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 
