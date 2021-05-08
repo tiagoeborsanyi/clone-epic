@@ -91,7 +91,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
               </div>
             </div>
             <button className='resume-checkout'>
-              finalizar compra
+              fazer pedido
             </button>
           </div>
         </div>
