@@ -17,6 +17,22 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
         }}
       >
         
+          <div className='metodo-pagamento__titulo'>método de pagamento</div>
+          <div className='metodo-pagamento__conteudo'>
+            <h3>escolher um método de pagamento</h3>
+            <div>
+              conteudo
+            </div>
+          </div>
+
+
+        
+          <div className='finaliza-compra__titulo'>finalizar compra</div>
+        
+          <div className='resumo__titulo'>resumo pedido</div>
+          <div className='resumo__conteudo'>
+            conteudo
+          </div>
       </div>
     </>
   )
