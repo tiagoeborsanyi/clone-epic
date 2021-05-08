@@ -32,6 +32,22 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
               </button>
             </div>
           </div>
+          <div className='conteudo-pages'>
+            <div className='conteudo-metodo'>
+              fghsfdfhdsf
+            </div>
+
+            <div className='conteudo-finaliza'>
+              nao vejo
+              <h1>rpkoejghiotrjihojrtiohjiort</h1>
+              <h1>rpkoejghiotrjihojrtiohjiort</h1>
+              <h1>rpkoejghiotrjihojrtiohjiort</h1>
+              <h1>rpkoejghiotrjihojrtiohjiort</h1>
+              <h1>rpkoejghiotrjihojrtiohjiort</h1>
+              <h1>rpkoejghiotrjihojrtiohjiort</h1>
+              <h1>rpkoejghiotrjihojrtiohjiort</h1>
+            </div>
+          </div>
         </div>
 
 

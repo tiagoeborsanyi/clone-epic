@@ -79,6 +79,29 @@
   }
 }
 
+.conteudo-pages {
+  height: calc(100% - 7.7rem);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+// Algumas coisas aqui precisam ir pro style do elemento
+.conteudo-metodo {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #2b2a2a;
+}
+
+.conteudo-finaliza {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: translateX(-100vw);
+  background-color: #2b2a2a;
+}
+
 
 
 
