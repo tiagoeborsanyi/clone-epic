@@ -5,6 +5,7 @@ import './modal.scss'
 import Card from '../../assets/credit_card.png'
 import Flash from '../../assets/flash.png'
 import Paypal from '../../assets/paypal.png'
+import Xsola from '../../assets/xsola.png'
 
 interface IModalProps {
   show?: boolean
@@ -39,34 +40,97 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
             <div className='conteudo-metodo'>
               <h3 className='conteudo-metodo__title'>escolher um método de pagamento</h3>
               <form className='conteudo-form'>
-                <div className='conteudo-form__block'>
-                  <input type="radio" name='card' />
-                  <label htmlFor='card' className='conteudo-form__block--label'>
-                    <img src={Card} alt='card1' />
-                    <span>Credit Card</span>
-                  </label>
+                <div className='conteudo-form__geral'>
+                  <div className='conteudo-form__block'>
+                    <input type="radio" name='card' id='card' />
+                    <label htmlFor='card' className='conteudo-form__block--label'>
+                      <img src={Card} alt='card1' />
+                      <span>Credit Card</span>
+                    </label>
+                  </div>
+                  <div className='block-expand expanded-selected'>
+                    <div className='block-expand__termos'>
+                      <img src={Xsola} alt="xsola" />
+                      <div>
+                        <p>Pagamento baseado em Xsolla</p>
+                        <span>Termos e condições</span>
+                      </div>
+                    </div>
+                    <p className='block-expand__info'>
+                      Você será redirecionado ao seu prestador de serviço de pagamento para finalizar a compra.
+                    </p>
+                  </div>
                 </div>
+
+                <div className='conteudo-form__geral'>
                 <div className='conteudo-form__block'>
-                  <input type="radio" name='card' />
-                  <label htmlFor='card' className='conteudo-form__block--label'>
+                  <input type="radio" name='card' id='flash' />
+                  <label htmlFor='flash' className='conteudo-form__block--label'>
                     <img src={Flash} alt='card1' />
                     <span>Boleto Flash</span>  
                   </label>
                 </div>
+                <div className='block-expand'>
+                    <div className='block-expand__termos'>
+                      <img src={Xsola} alt="xsola" />
+                      <div>
+                        <p>Pagamento baseado em Xsolla</p>
+                        <span>Termos e condições</span>
+                      </div>
+                    </div>
+                    <p className='block-expand__info'>
+                      Você será redirecionado ao seu prestador de serviço de pagamento para finalizar a compra.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div className='conteudo-form__geral'>
                 <div className='conteudo-form__block'>
-                  <input type="radio" name='card' />
-                  <label htmlFor='card' className='conteudo-form__block--label'>
+                  <input type="radio" name='card' id='paypal' />
+                  <label htmlFor='paypal' className='conteudo-form__block--label'>
                     <img src={Paypal} alt='card1' />
                     <span>PayPal</span>
                   </label>
                 </div>
+                <div className='block-expand'>
+                    <div className='block-expand__termos'>
+                      <img src={Xsola} alt="xsola" />
+                      <div>
+                        <p>Pagamento baseado em Xsolla</p>
+                        <span>Termos e condições</span>
+                      </div>
+                    </div>
+                    <p className='block-expand__info'>
+                      Você será redirecionado ao seu prestador de serviço de pagamento para finalizar a compra.
+                    </p>
+                  </div>
+
+                </div>
+
+                <div className='conteudo-form__geral'>
                 <div className='conteudo-form__block'>
-                  <input type="radio" name='card' />
-                  <label htmlFor='card' className='conteudo-form__block--label'>
+                  <input type="radio" name='card' id='itau' />
+                  <label htmlFor='itau' className='conteudo-form__block--label'>
                     <img src={Card} alt='card1' />
                     <span>Banco Itau</span>
                   </label>
                 </div>
+                <div className='block-expand'>
+                    <div className='block-expand__termos'>
+                      <img src={Xsola} alt="xsola" />
+                      <div>
+                        <p>Pagamento baseado em Xsolla</p>
+                        <span>Termos e condições</span>
+                      </div>
+                    </div>
+                    <p className='block-expand__info'>
+                      Você será redirecionado ao seu prestador de serviço de pagamento para finalizar a compra.
+                    </p>
+                  </div>
+
+                </div>
+
               </form>
             </div>
 
