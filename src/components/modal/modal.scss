@@ -12,7 +12,7 @@
 }
 
 .modal {
-  height: 70vh;
+  height: 80vh;
   width: 80vw;
   min-width: 1150px;
   max-width: 130rem;
@@ -75,5 +75,12 @@
   &__conteudo {
     grid-column: 3 / -1;
     grid-row: 2 / -1;
+
+    &--image {
+      height: 40rem;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+    }
   }
 }

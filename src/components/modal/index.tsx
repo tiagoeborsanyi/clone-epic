@@ -31,6 +31,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
         
           <div className='resumo__titulo'>resumo pedido</div>
           <div className='resumo__conteudo'>
+            <div className='resumo__conteudo--image' style={{backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/assassins-creed-valhala.webp?alt=media)`}}></div>
             conteudo
           </div>
       </div>
