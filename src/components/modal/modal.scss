@@ -58,12 +58,30 @@
   height: 7.7rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
 
   & > h3 {
     font-size: 1.4rem;
     text-transform: uppercase;
-    font-weight: 400;
-    padding-left: 8px;
+    font-weight: 500;
+    // padding-left: 8px;
+  }
+
+  &__button {
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    & > svg {
+      font-size: 2.5rem;
+      color: #fff;
+    }
+
+    &:hover svg {
+      color: #ccc;
+    }
   }
 }
 
@@ -127,6 +145,81 @@
 .resume-totalvalue {
   font-weight: 500;
 }
+
+.resume-form {
+  &__block {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1.4rem;
+
+    & > svg {
+      position: absolute;
+      top: .9rem;
+      right: 2rem;
+      font-size: 2rem;
+      font-weight: 600;
+      color: rgb(43, 42, 42);
+    }
+  }
+
+  &__input {
+    height: 4rem;
+    width: 100%;
+    padding-left: 1rem;
+    outline: none;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__checkbox {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+
+    & > input {
+      margin-top: 2px;
+      height: 1.9rem;
+      width: 1.9rem;
+    }
+
+    & > label {
+      font-size: 1.3rem;
+
+      & > a {
+        color: $buttom-background;
+        cursor: pointer;
+    
+        &:hover {
+          color: $buttom-background-hover;
+        }
+      }
+    }
+  }
+}
+
+.resume-politica {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
+
+  & > span {
+    margin-right: .7rem;
+  }
+
+  & > a {
+    color: $buttom-background;
+    cursor: pointer;
+
+    &:hover {
+      color: $buttom-background-hover;
+    }
+  }
+}
+
+
 
 .resume-checkout {
   margin-top: auto;

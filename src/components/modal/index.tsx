@@ -1,4 +1,4 @@
-import { BsInfoCircle } from 'react-icons/bs'
+import { BsInfoCircle, BsX } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
 import './modal.scss'
@@ -23,6 +23,9 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
         <div className='modal-resumo'>
           <div className='resume-title'>
             <h3>resumo do pedido</h3>
+            <button className='resume-title__button'>
+              <BsX />
+            </button>
           </div>
           <div className='resume-content'>
             <div className='resume-content__image' style={{backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/snow-runner.webp?alt=media)'}}></div>
@@ -57,17 +60,17 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
               <div className='resume-content__line'></div>
               <form className='resume-form'>
                 <div className='resume-form__block'>
-                  <input className='resume-form__input' type="text" />
+                  <input className='resume-form__input' type="text" placeholder='INSIRA UMA TAG DE CRIADOR' />
                   <BsInfoCircle />
                 </div>
-                <div className='resume-form__block'>
+                <div className='resume-form__block resume-form__checkbox'>
                   <input type="checkbox" />
                   <label>
-                    Clique aqui para compartilhar seu e-mail com Snowman usará seu endereço de e-mail de acordo com a politica de privacidade deles, por isso recomendamos que você a leia.
+                    Clique aqui para compartilhar seu e-mail com Snowman usará seu endereço de e-mail de acordo com a <Link to='/'>politica de privacidade</Link> deles, por isso recomendamos que você a leia.
                   </label>
                 </div>
               </form>
-              <div>
+              <div className='resume-politica'>
                 <span>Precisa de ajuda?</span>
                 <Link to='/'>Entrar em contato conosco</Link>
               </div>
