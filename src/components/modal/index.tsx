@@ -5,7 +5,7 @@ interface IModalProps {
   modalClosed?: () => void
 }
 
-const Modal: React.FC<IModalProps> = ({ children, show, modalClosed }) => {
+const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
   return (
     <>
       {show && <div className='modal-backdrop' onClick={modalClosed}></div>}
@@ -16,8 +16,7 @@ const Modal: React.FC<IModalProps> = ({ children, show, modalClosed }) => {
           opacity: show ? '1' : '0'
         }}
       >
-        {children}
-        modal
+        
       </div>
     </>
   )

@@ -43,9 +43,7 @@ const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
   
   return (
     <div className='game-page'>
-      <Modal show={show} modalClosed={() => setShow(!show)}>
-        <button onClick={() => setShow(!show)}>closed</button>
-      </Modal>
+      <Modal show={true} modalClosed={() => setShow(!show)} />
       <GameCarousel imagePageGame={game ? game['imagePageGame'] : ''} />
       <button onClick={() => setShow(!show)}>closed</button>
       <GameBoxText game={game} logged={logged} />
