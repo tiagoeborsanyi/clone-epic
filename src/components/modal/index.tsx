@@ -1,3 +1,6 @@
+import { BsInfoCircle } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+
 import './modal.scss'
 
 interface IModalProps {
@@ -52,8 +55,26 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
                 </li>
               </ul>
               <div className='resume-content__line'></div>
-
+              <form className='resume-form'>
+                <div className='resume-form__block'>
+                  <input className='resume-form__input' type="text" />
+                  <BsInfoCircle />
+                </div>
+                <div className='resume-form__block'>
+                  <input type="checkbox" />
+                  <label>
+                    Clique aqui para compartilhar seu e-mail com Snowman usará seu endereço de e-mail de acordo com a politica de privacidade deles, por isso recomendamos que você a leia.
+                  </label>
+                </div>
+              </form>
+              <div>
+                <span>Precisa de ajuda?</span>
+                <Link to='/'>Entrar em contato conosco</Link>
+              </div>
             </div>
+            <button className='resume-checkout'>
+              finalizar compra
+            </button>
           </div>
         </div>
       </div>

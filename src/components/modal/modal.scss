@@ -46,6 +46,8 @@
 .modal-resumo {
   height: 100%;
   grid-column: 2 / -1;
+  background-color: rgba(70, 70, 70, .7);
+  padding-bottom: 1rem;
 
   @media (max-width: 831px) {
     grid-column: 1 / -1;
@@ -67,7 +69,8 @@
 
 .resume-content {
   height: calc(100% - 7.7rem);
-
+  display: flex;
+  flex-direction: column;
 
   &__image {
     height: 37rem;
@@ -123,6 +126,19 @@
 }
 .resume-totalvalue {
   font-weight: 500;
+}
+
+.resume-checkout {
+  margin-top: auto;
+  margin-right: 8px;
+  margin-left: 8px;
+  height: 5rem;
+  border: none;
+  background-color: #ccc;
+  color: #2b2a2a;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 
