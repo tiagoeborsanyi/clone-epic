@@ -51,7 +51,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
                   <div className='block-expand expanded-selected'>
                     <div className='block-expand__termos'>
                       <img src={Xsola} alt="xsola" />
-                      <div>
+                      <div className='block-expand__termos--text'>
                         <p>Pagamento baseado em Xsolla</p>
                         <span>Termos e condições</span>
                       </div>
