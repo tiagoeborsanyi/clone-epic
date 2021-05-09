@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { BsInfoCircle, BsX } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
@@ -12,7 +13,34 @@ interface IModalProps {
   modalClosed?: () => void
 }
 
+type cardMethods = {
+  card: boolean
+  flash: boolean
+  paypal: boolean
+  itau: boolean
+}
+
 const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
+  const [showMethod, setShowMethod] = useState<cardMethods>({
+    card: false,
+    flash: false,
+    paypal: false,
+    itau: false
+  })
+
+  const handleChoiceMethod = (tipo: string) => {
+    const copy = {
+      card: false,
+      flash: false,
+      paypal: false,
+      itau: false
+    }
+    const t = Object.assign({}, copy, {[tipo]: true})
+    setShowMethod(t)
+  }
+
+
+
   return (
     <>
       {show && <div className='modal-backdrop' onClick={modalClosed}></div>}
@@ -43,12 +71,12 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
                 <div className='conteudo-form__geral'>
                   <div className='conteudo-form__block'>
                     <input type="radio" name='card' id='card' />
-                    <label htmlFor='card' className='conteudo-form__block--label'>
+                    <label htmlFor='card' className='conteudo-form__block--label' onClick={() => handleChoiceMethod('card')}>
                       <img src={Card} alt='card1' />
                       <span>Credit Card</span>
                     </label>
                   </div>
-                  <div className='block-expand expanded-selected'>
+                  <div className={`block-expand ${showMethod.card && 'expanded-selected'}`}>
                     <div className='block-expand__termos'>
                       <img src={Xsola} alt="xsola" />
                       <div className='block-expand__termos--text'>
@@ -65,12 +93,12 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
                 <div className='conteudo-form__geral'>
                 <div className='conteudo-form__block'>
                   <input type="radio" name='card' id='flash' />
-                  <label htmlFor='flash' className='conteudo-form__block--label'>
+                  <label htmlFor='flash' className='conteudo-form__block--label' onClick={() => handleChoiceMethod('flash')}>
                     <img src={Flash} alt='card1' />
                     <span>Boleto Flash</span>  
                   </label>
                 </div>
-                <div className='block-expand'>
+                <div className={`block-expand ${showMethod.flash && 'expanded-selected'}`}>
                     <div className='block-expand__termos'>
                       <img src={Xsola} alt="xsola" />
                       <div>
@@ -88,12 +116,12 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
                 <div className='conteudo-form__geral'>
                 <div className='conteudo-form__block'>
                   <input type="radio" name='card' id='paypal' />
-                  <label htmlFor='paypal' className='conteudo-form__block--label'>
+                  <label htmlFor='paypal' className='conteudo-form__block--label' onClick={() => handleChoiceMethod('paypal')}>
                     <img src={Paypal} alt='card1' />
                     <span>PayPal</span>
                   </label>
                 </div>
-                <div className='block-expand'>
+                <div className={`block-expand ${showMethod.paypal && 'expanded-selected'}`}>
                     <div className='block-expand__termos'>
                       <img src={Xsola} alt="xsola" />
                       <div>
@@ -111,12 +139,12 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
                 <div className='conteudo-form__geral'>
                 <div className='conteudo-form__block'>
                   <input type="radio" name='card' id='itau' />
-                  <label htmlFor='itau' className='conteudo-form__block--label'>
+                  <label htmlFor='itau' className='conteudo-form__block--label' onClick={() => handleChoiceMethod('itau')}>
                     <img src={Card} alt='card1' />
                     <span>Banco Itau</span>
                   </label>
                 </div>
-                <div className='block-expand'>
+                <div className={`block-expand ${showMethod.itau && 'expanded-selected'}`}>
                     <div className='block-expand__termos'>
                       <img src={Xsola} alt="xsola" />
                       <div>
