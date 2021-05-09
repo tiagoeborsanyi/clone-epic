@@ -142,10 +142,11 @@
   width: 18rem;
   background: #4e4e4e;
   padding: 0;
-  position: absolute;
+  position: fixed;
   top: -16rem;
   right: 12rem;
   transition: all .5s ease-in-out;
+  z-index: 1;
 
   .menu-dropdown__list {
     list-style: none;
