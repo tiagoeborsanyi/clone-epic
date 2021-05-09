@@ -19,7 +19,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
       <div 
         className='modal'
         style={{
-          transform: show ? 'translate(-50%, 5vh)' : 'translateY(-100vh)',
+          transform: show ? 'translate(-50%, 5vh)' : 'translate(-50%, -100vh)',
           opacity: show ? '1' : '0'
         }}
       >
@@ -151,7 +151,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
         <div className='modal-resumo'>
           <div className='resume-title'>
             <h3>resumo do pedido</h3>
-            <button className='resume-title__button'>
+            <button className='resume-title__button' onClick={modalClosed}>
               <BsX />
             </button>
           </div>

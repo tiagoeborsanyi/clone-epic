@@ -11,9 +11,10 @@ import { ButtonGame, ButtonGameFavorites } from './button'
 interface GameProps extends RouteComponentProps {
   game: any
   logged: boolean
+  modalClosed: () => void
 }
 
-const GameBoxText:React.FC<GameProps> = ({ game, logged, history }) => {
+const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed }) => {
   const [expand, setExapande] = useState(false)
 
   function handleExpand() {
@@ -24,6 +25,7 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history }) => {
   const handleToCart = () => {
     if (logged) {
       console.log(game)
+      modalClosed()
     } else {
       history.push('/login')
     }
