@@ -47,7 +47,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
       <div 
         className='modal'
         style={{
-          transform: show ? 'translate(-50%, 5vh)' : 'translate(-50%, -100vh)',
+          transform: show ? 'translate(-50%, 5vh)' : 'translate(-50%, -200vh)',
           opacity: show ? '1' : '0'
         }}
       >
