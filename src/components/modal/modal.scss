@@ -105,9 +105,17 @@
   height: 100%;
   width: 100%;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   // transform: translateX(-100vw);
   background-color: #2b2a2a;
   transition: all .8s ease;
+
+  & > h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+  }
 }
 
 .conteudo-form {

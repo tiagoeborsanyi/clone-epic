@@ -190,14 +190,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
               className='conteudo-finaliza'
               style={checkout ? {} : {transform: 'translateX(-100vw)'}}
             >
-              nao vejo
-              <h1>rpkoejghiotrjihojrtiohjiort</h1>
-              <h1>rpkoejghiotrjihojrtiohjiort</h1>
-              <h1>rpkoejghiotrjihojrtiohjiort</h1>
-              <h1>rpkoejghiotrjihojrtiohjiort</h1>
-              <h1>rpkoejghiotrjihojrtiohjiort</h1>
-              <h1>rpkoejghiotrjihojrtiohjiort</h1>
-              <h1>rpkoejghiotrjihojrtiohjiort</h1>
+              <h1>Obrigado por sua compra.</h1>
             </div>
           </div>
         </div>
@@ -258,6 +251,10 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
                 <Link to='/'>Entrar em contato conosco</Link>
               </div>
             </div>
+            { checkout ?
+            <button onClick={modalClosed} className='inative-resume-checkout active-resume-checkout'>
+              fechar
+            </button> :
             <button
               disabled={!activeButton} 
               className={`inative-resume-checkout ${activeButton && 'active-resume-checkout'}`}
@@ -265,6 +262,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
             >
               fazer pedido
             </button>
+            }
           </div>
         </div>
       </div>
