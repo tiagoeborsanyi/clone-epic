@@ -4,12 +4,13 @@ import { GoPlus } from 'react-icons/go'
 import './button-game.scss'
 
 interface IButtonGameProps {
-  handleToCart: () => void
+  handleToCart?: () => void
+  desactived?: boolean
 }
 
-export const ButtonGame: React.FC<IButtonGameProps> = ({ children, handleToCart }) => {
+export const ButtonGame: React.FC<IButtonGameProps> = ({ children, handleToCart, desactived }) => {
   return (
-    <button className='button-game game-wallet' onClick={handleToCart}>
+    <button className={`button-game game-wallet ${desactived && 'button-game-inative'}`} onClick={handleToCart}>
       {children}
     </button>
   )

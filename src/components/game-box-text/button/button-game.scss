@@ -28,3 +28,11 @@
   border-radius: 0 5px 5px 0;
   display: grid;
 }
+
+.button-game-inative {
+  background-color: rgb(1, 73, 1);
+  &:hover {
+    background-color: rgb(1, 73, 1);
+    cursor: not-allowed;
+  }
+}
