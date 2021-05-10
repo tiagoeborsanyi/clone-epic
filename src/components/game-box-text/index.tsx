@@ -6,7 +6,6 @@ import firebase from 'firebase/app'
 import './game-box-text.scss'
 import { firestore } from '../../firebase/firebase.utils'
 import { ButtonGame, ButtonGameFavorites } from './button'
-// import { RiCollageLine } from 'react-icons/ri'
 
 interface GameProps extends RouteComponentProps {
   game: any
@@ -24,7 +23,7 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed })
 
   const handleToCart = () => {
     if (logged) {
-      console.log(game)
+      // console.log(game)
       modalClosed()
     } else {
       history.push('/login')

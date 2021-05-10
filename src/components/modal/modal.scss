@@ -381,7 +381,7 @@
 
 
 
-.resume-checkout {
+.inative-resume-checkout {
   margin-top: auto;
   margin-right: 8px;
   margin-left: 8px;
@@ -392,6 +392,20 @@
   font-weight: 500;
   font-size: 1.4rem;
   text-transform: uppercase;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.active-resume-checkout {
+  background-color: $buttom-background;
+  color: #fff;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $buttom-background-hover;
+  }
 }
 
 

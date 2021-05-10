@@ -31,7 +31,7 @@ const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
   const { logged } = useAuth()
   const [game, setGame] = useState<GameProps | undefined>()
   const [show, setShow] = useState<boolean>(false)
-  console.log(show)
+  // console.log(show)
 
   useEffect(() => {
     const filterData = dataItems.filter(item => item.id === match.params.id)
@@ -43,7 +43,7 @@ const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
   
   return (
     <div className='game-page'>
-      <Modal show={show} modalClosed={() => setShow(!show)} />
+      <Modal show={show} modalClosed={() => setShow(!show)} game={game} />
       <GameCarousel imagePageGame={game ? game['imagePageGame'] : ''} />
       <GameBoxText game={game} logged={logged} modalClosed={() => setShow(!show)} />
     </div>

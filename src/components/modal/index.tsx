@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { BsInfoCircle, BsX } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import firebase from 'firebase/app'
 
 import './modal.scss'
+import { firestore } from '../../firebase/firebase.utils'
 import Card from '../../assets/credit_card.png'
 import Flash from '../../assets/flash.png'
 import Paypal from '../../assets/paypal.png'
@@ -11,6 +13,7 @@ import Xsola from '../../assets/xsola.png'
 interface IModalProps {
   show?: boolean
   modalClosed?: () => void
+  game: any
 }
 
 type cardMethods = {
@@ -20,7 +23,8 @@ type cardMethods = {
   itau: boolean
 }
 
-const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
+const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
+  const [activeButton, setActiveButton] = useState<boolean>(false)
   const [showMethod, setShowMethod] = useState<cardMethods>({
     card: false,
     flash: false,
@@ -37,6 +41,21 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
     }
     const t = Object.assign({}, copy, {[tipo]: true})
     setShowMethod(t)
+    for (let k in t) {
+      console.log(t[k])
+      if (t[k]) {
+        setActiveButton(true)
+      }
+    }
+  }
+
+  const handlePayGame = async () => {
+    // console.log(game)
+    await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
+        biblioteca: firebase.firestore.FieldValue.arrayUnion(game)
+      })
+      .then(() => console.log('adicionado com sucesso'))
+      .catch(err => console.log(err))
   }
 
 
@@ -231,7 +250,11 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed }) => {
                 <Link to='/'>Entrar em contato conosco</Link>
               </div>
             </div>
-            <button className='resume-checkout'>
+            <button
+              disabled={!activeButton} 
+              className={`inative-resume-checkout ${activeButton && 'active-resume-checkout'}`}
+              onClick={handlePayGame}
+            >
               fazer pedido
             </button>
           </div>
