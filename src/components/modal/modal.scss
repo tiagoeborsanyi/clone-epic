@@ -105,8 +105,9 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  transform: translateX(-100vw);
+  // transform: translateX(-100vw);
   background-color: #2b2a2a;
+  transition: all .8s ease;
 }
 
 .conteudo-form {

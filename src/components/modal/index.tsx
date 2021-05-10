@@ -25,6 +25,7 @@ type cardMethods = {
 
 const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
   const [activeButton, setActiveButton] = useState<boolean>(false)
+  const [checkout, setCheckout] = useState<boolean>(false)
   const [showMethod, setShowMethod] = useState<cardMethods>({
     card: false,
     flash: false,
@@ -50,12 +51,16 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
   }
 
   const handlePayGame = async () => {
+    setCheckout(true)
     // console.log(game)
-    await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
-        biblioteca: firebase.firestore.FieldValue.arrayUnion(game)
-      })
-      .then(() => console.log('adicionado com sucesso'))
-      .catch(err => console.log(err))
+    // await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
+    //     biblioteca: firebase.firestore.FieldValue.arrayUnion(game)
+    //   })
+    //   .then(() => {
+    //     console.log('adicionado com sucesso')
+    //     setCheckout(true)
+    //   })
+    //   .catch(err => console.log(err))
   }
 
 
@@ -72,12 +77,12 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
       >
         <div className='modal-conteudo'>
           <div className='conteudo-header'>
-            <div className='conteudo-header__same conteudo-header__metodo conteudo-header__checked'>
+            <div className={`conteudo-header__same conteudo-header__metodo ${!checkout && 'conteudo-header__checked'}`}>
               <button>
                 método de pagemto
               </button>
             </div>
-            <div className='conteudo-header__same conteudo-header__finaliza'>
+            <div className={`conteudo-header__same conteudo-header__finaliza ${checkout && 'conteudo-header__checked'}`}>
               <button>
                 finaliza compra
               </button>
@@ -181,7 +186,10 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
               </form>
             </div>
 
-            <div className='conteudo-finaliza'>
+            <div
+              className='conteudo-finaliza'
+              style={checkout ? {} : {transform: 'translateX(-100vw)'}}
+            >
               nao vejo
               <h1>rpkoejghiotrjihojrtiohjiort</h1>
               <h1>rpkoejghiotrjihojrtiohjiort</h1>
