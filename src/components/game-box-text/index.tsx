@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BsBoxArrowInUpRight } from 'react-icons/bs'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import firebase from 'firebase/app'
@@ -15,6 +15,35 @@ interface GameProps extends RouteComponentProps {
 
 const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed }) => {
   const [expand, setExapande] = useState(false)
+  const [payGame, setPayGame] = useState<boolean>(false)
+
+  useEffect(() => {
+    async function efeito () {
+      await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).get().then(doc => {
+        // console.log(doc.data())
+        let objUpdate: any
+        if (doc.exists) {
+          const ex = doc.data()
+          for (let k in ex) {
+            // console.log(k, ex[k])
+            if (k === 'biblioteca') {
+              objUpdate = ex[k]
+            }
+            
+          }
+        }
+        console.log(objUpdate)
+        if (game) {
+          const i = objUpdate.find((el: any) => el.id === game.id)
+          if (i) {
+            setPayGame(true)
+          }
+        }
+        
+      })
+    }
+    efeito()
+  })
 
   function handleExpand() {
     setExapande(!expand)
@@ -62,9 +91,14 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed })
             <span>R$ {game ? game.newValue : ''}</span>
           </div>
           <div className='game-box-text-description-content__button'>
+            {payGame ?
+            <ButtonGame  desactived={payGame}>
+              ADQUIRIDO
+            </ButtonGame> :
             <ButtonGame handleToCart={handleToCart}>
               COMPRE AGORA
             </ButtonGame>
+            }
             <ButtonGameFavorites handleFavorited={handleFavorited} />
           </div>
         </div>

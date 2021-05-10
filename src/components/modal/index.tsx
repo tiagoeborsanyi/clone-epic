@@ -51,16 +51,14 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
   }
 
   const handlePayGame = async () => {
-    setCheckout(true)
-    // console.log(game)
-    // await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
-    //     biblioteca: firebase.firestore.FieldValue.arrayUnion(game)
-    //   })
-    //   .then(() => {
-    //     console.log('adicionado com sucesso')
-    //     setCheckout(true)
-    //   })
-    //   .catch(err => console.log(err))
+    await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
+        biblioteca: firebase.firestore.FieldValue.arrayUnion(game)
+      })
+      .then(() => {
+        console.log('adicionado com sucesso')
+        setCheckout(true)
+      })
+      .catch(err => console.log(err))
   }
 
 
