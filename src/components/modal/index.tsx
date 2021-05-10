@@ -202,14 +202,14 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
             </button>
           </div>
           <div className='resume-content'>
-            <div className='resume-content__image' style={{backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/clone-epic.appspot.com/o/snow-runner.webp?alt=media)'}}></div>
+            <div className='resume-content__image' style={game && {backgroundImage: `url(${game.urlImage})`}}></div>
             <div className='resume-content__values'>
-              <h4 className='resume-content__values--title'>Skat City</h4>
+              <h4 className='resume-content__values--title'>{game && game.title}</h4>
               <h5 className='resume-content__values--subtitle'>Por Snowman</h5>
               <ul className='resume-content__items'>
                 <li className='resume-content__item'>
                   <p>Preço listado</p>
-                  <span className='resume-oldvalue'>R$ 28,99</span>
+                  <span className='resume-oldvalue'>R$ {game && game.oldValue}</span>
                 </li>
                 <li className='resume-content__item'>
                   <p>Desconto</p>
@@ -217,18 +217,18 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
                 </li>
                 <li className='resume-content__item'>
                   <p>Preço</p>
-                  <span>R$ 19,13</span>
+                  <span>R$ {game && game.newValue}</span>
                 </li>
               </ul>
               <div className='resume-content__line'></div>
               <ul className='resume-content__items'>
                 <li className='resume-content__item'>
                   <p>Total</p>
-                  <span>R$ 19,13</span>
+                  <span>R$ {game && game.newValue}</span>
                 </li>
                 <li className='resume-content__item'>
                   <p className='resume-totalvalue'>Você gasta</p>
-                  <span>R$ 19,13</span>
+                  <span>R$ {game && game.newValue}</span>
                 </li>
               </ul>
               <div className='resume-content__line'></div>
