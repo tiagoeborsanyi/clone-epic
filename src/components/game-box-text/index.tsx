@@ -67,7 +67,7 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed })
     if (logged) {
       // console.log(game)
       try {
-        const collection = await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
+        await firestore.doc(`users/${userId}`).update({
           favorites: firebase.firestore.FieldValue.arrayUnion(game)
         })
         // console.log(collection)
