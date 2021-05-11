@@ -5,6 +5,7 @@ import firebase from 'firebase/app'
 
 import './game-box-text.scss'
 import { firestore } from '../../firebase/firebase.utils'
+import { useAuth } from '../../hooks/auth'
 import { ButtonGame, ButtonGameFavorites } from './button'
 
 interface GameProps extends RouteComponentProps {
@@ -14,12 +15,13 @@ interface GameProps extends RouteComponentProps {
 }
 
 const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed }) => {
+  const { userId } = useAuth()
   const [expand, setExapande] = useState(false)
   const [payGame, setPayGame] = useState<boolean>(false)
 
   useEffect(() => {
     async function efeito () {
-      await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).get().then(doc => {
+      await firestore.doc(`users/${userId}`).get().then(doc => {
         // console.log(doc.data())
         let objUpdate: any
         if (doc.exists) {
@@ -32,8 +34,8 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed })
             
           }
         }
-        console.log(objUpdate)
-        if (game) {
+        // console.log(objUpdate)
+        if (game && objUpdate) {
           const i = objUpdate.find((el: any) => el.id === game.id)
           if (i) {
             setPayGame(true)
@@ -42,12 +44,14 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed })
         
       })
     }
-    efeito()
+    if (userId) {
+      efeito()
+    }
   })
 
   function handleExpand() {
     setExapande(!expand)
-    console.log(expand)
+    // console.log(expand)
   }
 
   const handleToCart = () => {
@@ -66,7 +70,7 @@ const GameBoxText:React.FC<GameProps> = ({ game, logged, history, modalClosed })
         const collection = await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
           favorites: firebase.firestore.FieldValue.arrayUnion(game)
         })
-        console.log(collection)
+        // console.log(collection)
       } catch (error) {
         console.log(error)
       }

@@ -5,6 +5,7 @@ import firebase from 'firebase/app'
 
 import './modal.scss'
 import { firestore } from '../../firebase/firebase.utils'
+import { useAuth } from '../../hooks/auth'
 import Card from '../../assets/credit_card.png'
 import Flash from '../../assets/flash.png'
 import Paypal from '../../assets/paypal.png'
@@ -24,6 +25,7 @@ type cardMethods = {
 }
 
 const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
+  const { userId } = useAuth()
   const [activeButton, setActiveButton] = useState<boolean>(false)
   const [checkout, setCheckout] = useState<boolean>(false)
   const [showMethod, setShowMethod] = useState<cardMethods>({
@@ -51,7 +53,7 @@ const Modal: React.FC<IModalProps> = ({ show, modalClosed, game }) => {
   }
 
   const handlePayGame = async () => {
-    await firestore.doc(`users/LHBNEsv5kRRq2jBbDq2p4DRcqBp1`).update({
+    await firestore.doc(`users/${userId}`).update({
         biblioteca: firebase.firestore.FieldValue.arrayUnion(game)
       })
       .then(() => {

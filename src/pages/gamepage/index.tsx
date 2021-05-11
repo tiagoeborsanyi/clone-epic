@@ -40,7 +40,7 @@ const GamePage: React.FC<IGamePageProps> = ({match, history}) => {
     }
     setGame(filterData[0])
   }, [match.params.id, history])
-  console.log(game)
+  // console.log(game)
   
   return (
     <div className='game-page'>
