@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, withRouter, RouteComponentProps } from 'react-router-dom'
 
 import { useAuth } from '../../hooks/auth'
 import { IoIosGlobe, IoIosPerson, SiEpicgames } from 'react-icons/all'
@@ -6,7 +6,7 @@ import { IoIosGlobe, IoIosPerson, SiEpicgames } from 'react-icons/all'
 import './header.scss'
 import { useState } from 'react'
 
-const Header = () => {
+const Header: React.FC<RouteComponentProps> = ({ history }) => {
   const { logged, signOut, displayName } = useAuth()
   const [f, setF] = useState(false)
 
@@ -19,10 +19,10 @@ const Header = () => {
       <div className='header'>
         <SiEpicgames className="header__logo" />
         <nav className="header__nav">
-          <Link to="/" className="nav-link selected-link">
+          <Link to="/" className={`nav-link ${history.location.pathname === '/' && 'selected-link'}`}>
           <span>store</span>
           </Link>
-          {logged && <Link to='/biblioteca' className="nav-link"><span>Biblioteca</span></Link>}
+          {logged && <Link to='/biblioteca' className={`nav-link ${history.location.pathname === '/biblioteca' && 'selected-link'}`}><span>Biblioteca</span></Link>}
           <Link to="/" className="nav-link"><span>perguntas frequentes</span></Link>
           <Link to="/" className="nav-link"><span>ajuda</span></Link>
         </nav>
@@ -78,4 +78,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default withRouter(Header)
