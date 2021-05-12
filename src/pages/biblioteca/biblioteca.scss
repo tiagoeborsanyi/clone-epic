@@ -1,0 +1,6 @@
+.show-cards-biblioteca {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  justify-items: center;
+  margin: 5rem 2rem;
+}
