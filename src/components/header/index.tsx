@@ -54,7 +54,7 @@ const Header: React.FC<RouteComponentProps> = ({ history }) => {
           <ul className='menu-dropdown__list'>
             <li className='menu-dropdown__item'>
               <Link to='/'>
-                Tiago
+                {displayName}
               </Link>
             </li>
             <li className='menu-dropdown__item'>
