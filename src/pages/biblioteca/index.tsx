@@ -32,6 +32,7 @@ const Biblioteca: React.FC = () => {
                 key={card.id}
                 urlImg={card.urlImage}
                 otherProps={card}
+                onLib
               />
           ))
         }
