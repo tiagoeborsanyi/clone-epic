@@ -58,7 +58,7 @@ const Header: React.FC<RouteComponentProps> = ({ history }) => {
               </Link>
             </li>
             <li className='menu-dropdown__item'>
-              <Link to='/'>
+              <Link to='/favoritos'>
                 Favoritos
               </Link>
             </li>

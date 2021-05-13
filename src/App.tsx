@@ -7,6 +7,7 @@ import Login from './pages/login'
 import Homepage from './pages/homepage'
 import GamePage from './pages/gamepage'
 import Biblioteca from './pages/biblioteca'
+import Favorites from './pages/favorites'
 import Footer from './components/footer'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route exact path='/' component={Homepage} />
         <Route path='/game/:id' component={GamePage} />
         <Route path='/biblioteca' component={Biblioteca} />
+        <Route path='/favoritos' component={Favorites} />
         <Route path='/login' component={Login} />
         <Redirect to='/' />
       </Switch>
