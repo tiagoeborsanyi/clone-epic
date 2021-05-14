@@ -1,9 +1,11 @@
 import './favorites.scss'
+import HeaderFavorites from '../../components/favorites/header-favorites'
 
 const Favorites: React.FC = () => {
   return (
     <div>
-      favoritos
+      <HeaderFavorites />
+      favoritos funfando
     </div>
   )
 }
