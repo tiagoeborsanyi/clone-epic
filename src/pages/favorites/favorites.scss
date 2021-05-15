@@ -1,0 +1,13 @@
+.notice {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 2rem;
+  font-size: 1.4rem;
+  background-color: rgba($color: #fff, $alpha: .1);
+  border-radius: 4px;
+  & > p {
+    margin: 0;
+  }
+}
