@@ -12,7 +12,7 @@ const HeaderFavorites: React.FC = () => (
       <p className='h-favorites-bloco__title'>Lista de desejos</p>
       <span className='h-favorites-bloco__number'>2</span>
       <form action="#" className='h-favorites-bloco__form'>
-        <div className='h-favorites-bloco__form-input'>
+        <div className='h-favorites-bloco__form--input'>
           <input type="text" placeholder='Procurar' />
         </div>
       </form>
